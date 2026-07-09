@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container" style="margin-top: 70px;">
+    <h2>네비게이션 바</h2>
+    <!-- 부트스트랩에서 미리 디자인한 네비게이션 바를 제공함 -->
+    <!-- <div> 태그나 <nav> 태그에 .navbar, .navbar-expand-화면크기 클래스를 추가하여 사용 -->
+    <!-- 메뉴 버튼을 설정할 자식 태그로 <ul> 태그를 사용하고, .navbar-nav 클래스를 추가함 -->
+    <!-- <li> 태그에 .nav-item 클래스를 추가하여 사용 -->
+    <!-- <li> 태그의 자식 태그로 <a> 태그를 추가하고, .nav-link 클래스를 사용함 -->
+    <!-- <a> 태그에 .active, .disabled 클래스를 추가하여 활성/비활성 가능 -->
+    <!-- .navbar-expand-화면크기 클래스를 생략 시 세로 방향 네비게이션바로 사용 가능 -->
+    <!-- .bg-테마컬러 클래스를 추가하여 네비게이션바의 색상을 변경할 수 있음 -->
+    <!-- 컬러 사용 시 .navbar-dark, .navbar-light 클래스를 추가하여 네비게이션바 색상에 맞는 텍스트 색상을 자동으로 지정할 수 있음 -->
+    <!-- 메뉴가 있는 <ul> 태그의 부모 태그에 .justify-content-정렬방향 클래스를 사용하여 메뉴 정렬 위치를 변경할 수 있음  -->
+  </div>
+
+  <h3>기본 네비게이션바</h3>
+
+  <nav class="navbar navbar-expand bg-dark navbar-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <br>
+
+  <nav class="navbar navbar-expand bg-info navbar-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <h3>컨테이너 안에 있는 네비게이션 바</h3>
+  <div class="container">
+    <nav class="navbar navbar-expand bg-warning navbar-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand bg-warning-subtle navbar-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <br><br>
+  <h3 class="text-center">브랜드 로그 및 브랜드 텍스트 사용하기</h3>
+  <!-- <ul> 태그 앞에 <a> 태그를 추가하고, .navbar-brand 클래스를 사용하면 브랜드 로고 사용가능 -->
+  <!-- 브랜드 로고 사용 시 메뉴가 오른쪽 정렬되면 <ul> 태그에 .me-auto 클래스를 추가 -->
+  <nav class="navbar navbar-expand bg-primary-subtle navbar-light">
+    <div class="container-fluid">
+      <!-- <a href="#" class="navbar-brand">Logo</a> -->
+      <a href="#" class="navbar-brand">
+        <img src="images/dog01.jpg" alt="" style="width: 40px;" class="rounded-circle">
+      </a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <br>
+
+  <h3 class="text-center">네비게이션바의 텍스트, 화면 크기에 따라서 메뉴가 숨겨지는 네비게이션바</h3>
+  <!-- 네비게이션바의 자식 태그로 <span> 태그를 사용하고, .navbar-text 클래스를 추가 -->
+  <!-- 네비게이션바에 글자만 출력되고 다른 이벤트는 동작하지 않음 -->
+  <!-- 네비게이션바에 <button> 태그를 추가하고, .navbar-toggler 클래스를 사용함 -->
+  <!-- <button> 태그에 data-bs-toggle="collapse" data-bs-target="메뉴버튼이 있는 태그의 id 값" 속성을 추가함 -->
+  <!-- 메뉴 버튼인 <ul> 태그의 부모 태그로 <div> 태그를 추가하고, .collapse, .navbar-collpase 클래스를 추가하며, id 값을 설정함 -->
+  <!-- 화면이 클 경우는 정상적인 네비게이션바로 출력되고, 지정한 화면너비보다 작아지면 메뉴를 숨김 -->
+  <nav class="navbar navbar-expand-md bg-success-subtle navbar-light">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Home</a>
+      <span class="navbar-text">일반 텍스트</span>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navi-menu-collpase">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navi-menu-collpase">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+
+  <h3 class="text-center">네비게이션바에 드랍다운 버튼 사용</h3>
+  <!-- 드랍다운 버튼으로 사용할 메뉴 버튼인 <li> 태그에 .dropdown 클래스를 추가 -->
+  <!-- <li> 태그의 링크 버튼을 담당하는 <a> 태그에 .dropdown-toggle 클래스를 추가하고, role="button", data-bs-toggle="toggle" 속성을 추가함 -->
+  <!-- <a> 태그의 형재 태그로 <ul> 태그를 추가하고, .dropdown-menu 클래스를 추가함 -->
+  <!-- 드랍다운 메뉴인 <ul> 태그의 자손 태그 중 <a> 태그에 .dropdown-item 클래스를 추가하여 사용 -->
+
+  <nav class="navbar navbar-expand-md bg-danger-subtle navbar-light">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Home</a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navi-menu-collpase2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navi-menu-collpase2">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">메뉴 2</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">드랍 다운 메뉴</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">dropdown link 1</a></li>
+              <li><a href="#" class="dropdown-item">dropdown link 2</a></li>
+              <li><a href="#" class="dropdown-item">dropdown link 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+
+  <h3 class="text-center">네비게이션바 안에 form 태그 사용</h3>
+  <!-- 네비게이션바 메뉴인 <ul> 태그 뒤에 형제 태그로 <form> 태그를 사용 -->
+  <!-- <form> 태그에 .d-flex 클래스를 추가 -->
+  <!-- <form> 태그의 자식 태그로 <input>, <button> 태그를 사용 -->
+  <!-- <a> 태그만 사용 시 <form> 태그 대신 <div> 태그 사용 -->
+  <nav class="navbar navbar-expand-md bg-dark-subtle navbar-light">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Home</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴3</a>
+        </li>
+      </ul>
+      <form action="#" class="d-flex">
+        <input type="text" class="form-control me-2" placeholder="검색...">
+        <button type="button" class="btn btn-success" style="min-width: 80px;">검색</button>
+      </form>
+      <!-- <div>
+        <a href="#" class="btn btn-success">로그인</a>
+      </div> -->
+    </div>
+  </nav>
+
+  <br>
+
+  <h3>네비게이션바 상단 고정, 스티키 네비게이션바</h3>
+  <!-- 네비게이션바에 .fixed-top, .fixed-bottom 클래스를 추가 시 상단 혹은 하단 고정됨 -->
+  <!-- 스티키 네비게이션바는 화면 최상단에 네비게이션바가 있는 것이 아니라, 네비게이션바보다 위쪽에 컨텐츠가 존재하고, 그 아래에 네비게이션바가 존재하는 형태이며, 스크롤 시 네비게이션바가 상단에 붙어서 고정되는 방식의 네비게이션바 -->
+  <!-- 네비게이션바에 .sticky-top 클래스 추가 -->
+  <!-- 네비게이션바 고정 시 네비게이션바가 컨텐츠 위에 떠있는 형태이므로 상단 영역을 덮어씌우면서 동작하므로 상단에 공백을 줘야 함 -->
+
+  <nav class="navbar navbar-expand bg-secondary navbar-dark fixed-bottom">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Home</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <br>
+
+  <nav class="navbar navbar-expand bg-info-subtle navbar-light sticky-top">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Home</a>
+      <span>스티키 네비게이션바 </span>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">메뉴 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br>
+
+  <div>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p>sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-secondary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+    <p class="bg-primary-subtle">sticky 네비게이션바 사용 시 보일 화면 내용</p>
+  </div>
+
+
+  <br>
+  <hr><br>
+
+  <div class="container">
+    <h3>페이지네이션</h3>
+    <!-- 게시판 아래의 페이지 번호 부분을 부트스트랩에서 미리 디자인하여 제공 -->
+    <!-- <ul> 태그에 .pagination 클래스를 추가 -->
+    <!-- <li> 태그에 .page-item 클래스를 추가 -->
+    <!-- <li> 태그의 자식태그로 <a> 를 사용하고, .page-link 클래스를 추가 -->
+    <!-- <li> 태그에 .active, .disabled 클래스를 추가하여 활성/비활성화 사용 가능  -->
+    <!-- <ul> 태그에 .pagination-sm, .pagination-lg 클래스를 추가하여 크기 설정 가능 -->
+    <!-- <ul> 태그에 .justify-content-start, .justify-content-center, .justify-content-end 클래스를 추가하여 정렬할 수 있음 -->
+
+    <ul class="pagination justify-content-center pagination-sm">
+      <li class="page-item disabled"><a href="#" class="page-link">Prev</a></li>
+      <li class="page-item"><a href="#" class="page-link">1</a></li>
+      <li class="page-item"><a href="#" class="page-link">2</a></li>
+      <li class="page-item active"><a href="#" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" class="page-link">4</a></li>
+      <li class="page-item"><a href="#" class="page-link">5</a></li>
+      <li class="page-item"><a href="#" class="page-link">Next</a></li>
+    </ul>
+
+    <br><br>
+
+    <h3>Breadcrumbs</h3>
+    <!-- 웹에서 현재 사용자의 위치를 표시하고자 할 경우 사용 -->
+    <!-- <ul> 태그에 .breadcrumb 클래스를 추가하고, <li> 태그에 .breadcrumb-item 클래스를 추가하여 사용함 -->
+    <!-- <li> 태그에 .active 클래스를 추가하여 현재 사용자가 있는 위치를 표시 함 -->
+
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">사진</a></li>
+      <li class="breadcrumb-item"><a href="#">2026년</a></li>
+      <li class="breadcrumb-item"><a href="#">부산</a></li>
+      <li class="breadcrumb-item active">해운대</li>
+    </ul>
+  </div>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

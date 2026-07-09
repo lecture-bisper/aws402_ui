@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    table.tb01 {
+      border-collapse: collapse;
+      caption-side: bottom;
+    }
+
+    table.tb01 th,
+    table.tb01 td {
+      border: 1px solid #CCCCCC;
+      padding: 10px;
+    }
+
+    table.tb01 th {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    table.tb01 td {
+      text-align: start;
+      font-size: 14px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--   
+  1. 요구사항 (HTML)
+  전체를 감싸는 표 태그(<table>)를 사용합니다.
+  표의 첫 번째 행은 제목 행으로, <tr> 내부에 <th> 태그를 사용하여 과목, 중간고사, 기말고사를 넣습니다.
+  두 번째 행과 세 번째 행은 일반 데이터 행으로, <tr> 내부에 <td> 태그를 사용하여 아래의 내용을 넣습니다.
+
+  두 번째 행: HTML/CSS, 95점, 100점
+  세 번째 행: 자바스크립트, 85점, 90점
+
+2. 요구사항 (CSS)
+  선택자: table, th, td 태그 선택자를 모두 활용하여 스타일을 지정합니다.
+  테두리(Border):
+  th와 td에 1px 두께의 실선(solid)으로 회색(#ccc) 테두리를 부여하세요.
+
+  border-collapse:
+  표 전체(table)의 테두리가 중복되어 두껍게 나오지 않도록, 테두리를 하나로 합치는 속성을 적용하세요.
+
+  텍스트 및 폰트:
+  제목 셀(th)의 텍스트는 가운데 정렬, 글자 크기는 16px, 글자 두께는 두껍게(bold) 설정하세요.
+  데이터 셀(td)의 텍스트는 왼쪽 정렬, 글자 크기는 14px, 글자 모양은 기본(normal)으로 설정하세요.
+  (선택) 셀 내부의 답답함을 줄이기 위해 th와 td에 padding: 10px;를 추가해 주면 더 보기 좋습니다. -->
+
+  <div>
+    <h2>문제 1</h2>
+
+    <table class="tb01">
+      <caption>문제 1</caption>
+      <thead>
+        <tr>
+          <th>과목</th>
+          <th>중간고사</th>
+          <th>기말고사</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML/CSS</td>
+          <td>95점</td>
+          <td>100점</td>
+        </tr>
+        <tr>
+          <td>자바스크립트</td>
+          <td>85점</td>
+          <td>90점</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

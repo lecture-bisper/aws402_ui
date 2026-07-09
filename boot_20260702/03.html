@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- 스크롤 스파이 -->
+  <!-- 화면 스크롤 위치에 따라서 네비게이션 바의 메뉴가 활성되는 기능을 부트스트랩이 제공함 -->
+
+  <!-- 네비게이션바를 만들고, <a> 태그의 href 속성값으로 이동하고자 하는 위치의 id 값을 설정 -->
+  <!-- 스크롤 스파이 기능을 사용할 <div> 태그에 data-bs-spy="scroll", data-bs-target="네비게이션바의 id값" 을 설정 -->
+  <!-- 실제로 이동할 영역이 있는 div 태그에 id 값을 설정 -->
+
+  <nav id="navbar-scroll" class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">스크롤 스파이</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a href="#sec-1" class="nav-link">section 1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-2" class="nav-link">section 2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-3" class="nav-link">section 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div data-bs-spy="scroll" data-bs-target="#navbar-scroll" data-bs-offset="100" data-bs-smooth-scroll="true"
+    class="mt-5">
+    <div id="sec-1" class="container-fluid bg-success text-white p-4 py-5" style="height: 1000px;">
+      <h1>section 1</h1>
+      <p>스크롤 스파이를 사용하여 네비게이션 메뉴와 동기화하는 영역 1</p>
+    </div>
+    <div id="sec-2" class="container-fluid bg-warning text-white p-4 py-5" style="height: 1000px;">
+      <h1>section 2</h1>
+      <p>스크롤 스파이를 사용하여 네비게이션 메뉴와 동기화하는 영역 2</p>
+    </div>
+    <div id="sec-3" class="container-fluid bg-info text-white p-4 py-5" style="height: 1000px;">
+      <h1>section 3</h1>
+      <p>스크롤 스파이를 사용하여 네비게이션 메뉴와 동기화하는 영역 3</p>
+    </div>
+
+  </div>
+</body>
+
+</html>

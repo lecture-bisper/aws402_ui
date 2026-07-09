@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <h2>내용 접기 (collapse)</h2>
+    <!-- <button> 태그와 <div> 태그를 사용하여 특정 영역을 숨기거나 표시하도록 할 수 있음 -->
+    <!-- 접기 기능을 사용할 <button> 태그에 data-bs-toggle="collapse" 와 data-bs-target="div태그의 id명" 을 추가 -->
+    <!-- <button> 태그 클릭 시 숨겨지거나 표시되거나 할 <div> 태그에 id 값을 설정하고, .collapse 클래스를 추가 -->
+
+    <div>
+      <h3>화면 접어서 숨기기</h3>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#div-collapse">
+        클릭 시 화면 숨기기/표시하기
+      </button>
+      <br>
+      <div id="div-collapse" class="collapse">
+        <h4>위의 버튼 클릭 시 접혀서 숨겨지는 부분</h4>
+        <p>버튼 클릭 시 숨겨졌다가 보였다가 함</p>
+      </div>
+
+      <br>
+      <hr>
+      <hr>
+
+      <h3>아코디언 사용하기</h3>
+      <!-- collapse 의 발전된 형태로 부트스트랩에서 미리 디자인하여 제공함 -->
+      <!-- 부모가 되는 <div> 태그에 accordion 을 id 값으로 사용 -->
+      <!-- 접혔다가 표시될 자식 태그를 <div> 태그로 선언하고, id 값을 설정 후 .collapse 클래스 추가 -->
+      <!-- 자식 <div> 태그를 여러 개 선언, 기본적으로 보여줄 <div> 태그에 .show 클래스를 추가하고 data-bs-parent="#accordion" 속성을 추가 -->
+      <!-- 각 버튼마다 data-bs-toggle="collapse" 속성을 추가 -->
+
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <a href="#div01" class="btn" data-bs-toggle="collapse">클릭 시 1번 영역 열림</a>
+          </div>
+          <div id="div01" class="collapse show" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h4>클릭 시 열리는 1번 영역</h4>
+              <p>다른 목록을 클릭하면 현재 영역은 닫힘</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a href="#div02" class="btn" data-bs-toggle="collapse">클릭 시 2번 영역 열림</a>
+          </div>
+          <div id="div02" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h4>클릭 시 열리는 2번 영역</h4>
+              <p>다른 목록을 클릭하면 현재 영역은 닫힘</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a href="#div03" class="btn" data-bs-toggle="collapse">클릭 시 3번 영역 열림</a>
+          </div>
+          <div id="div03" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h4>클릭 시 열리는 3번 영역</h4>
+              <p>다른 목록을 클릭하면 현재 영역은 닫힘</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <br>
+    <hr><br>
+
+
+
+  </div>
+
+</body>
+
+</html>

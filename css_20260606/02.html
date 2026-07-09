@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      width: 1200px;
+      margin: 50px auto 0px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 8px;
+      padding: 8px;
+      background-color: deepskyblue;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+
+    .clip {
+      border: 20px dotted black;
+      padding: 20px;
+    }
+
+    .content-box {
+      background-clip: content-box;
+    }
+
+    .padding-box {
+      background-clip: padding-box;
+    }
+
+    .border-box {
+      background-clip: border-box;
+    }
+
+    .box-bg {
+      width: 1000px;
+      height: 1000px;
+      background-image: url('cat03.jpg');
+    }
+
+    .repeat {
+      background-repeat: repeat;
+    }
+
+    .repeat-x {
+      background-repeat: repeat-x;
+    }
+
+    .repeat-y {
+      background-repeat: repeat-y;
+    }
+
+    .norepeat {
+      background-repeat: no-repeat;
+    }
+
+    .bg-position {
+      background-position: center center;
+    }
+
+    .bg-origin {
+      background-origin: content-box;
+    }
+
+    body {
+      background-image: url('cat02.jpg');
+      background-repeat: no-repeat;
+      background-position: right 20%;
+      background-attachment: fixed;
+    }
+
+    .background {
+      background: url('cat03.jpg') repeat-x center top;
+    }
+
+    .bg-size {
+      background-size: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>배경색 사용하기</h2>
+
+    <div>
+      <h3>background-color, background-clip</h3>
+
+      <div class="box inline-block clip">기본값</div>
+      <div class="box inline-block clip content-box">background-clip: content-box</div>
+      <div class="box inline-block clip padding-box">background-clip: padding-box</div>
+      <div class="box inline-block clip border-box">background-clip: border-box</div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h2>background-image, background-repeat</h2>
+
+      <div class="box box-bg norepeat"></div>
+
+      <br><br>
+
+      <h4>background-position</h4>
+      <div class="box box-bg norepeat bg-position"></div>
+
+      <br><br>
+
+      <h4>background-origin</h4>
+      <div class="box box-bg clip bg-origin norepeat"></div>
+
+      <br><br>
+
+      <h4>background</h4>
+      <div class="box box-bg background"></div>
+
+      <br><br>
+
+      <h4>background-size</h4>
+      <div class="box box-bg norepeat bg-position bg-size"></div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

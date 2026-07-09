@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #div01 .box {
+      width: 150px;
+      height: 150px;
+      border: 2px dashed black;
+      display: inline-block;
+      margin: 0;
+    }
+
+    #div02 .box {
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      margin: 20px;
+      border: 20px solid black;
+    }
+
+    #div02 .bs-1 {
+      border-style: none;
+    }
+
+    #div02 .bs-2 {
+      border-style: solid;
+    }
+
+    #div02 .bs-3 {
+      border-style: dotted;
+    }
+
+    #div02 .bs-4 {
+      border-style: dashed;
+    }
+
+    #div02 .bs-5 {
+      border-style: double;
+    }
+
+    #div02 .bs-6 {
+      border-style: groove;
+    }
+
+    #div02 .bs-7 {
+      border-style: inset;
+    }
+
+    #div02 .bs-8 {
+      border-style: outset;
+    }
+
+    #div02 .bs-9 {
+      border-style: ridge;
+    }
+
+    #div02 .bw-1 {
+      border-width: 10px;
+    }
+
+    #div02 .bw-2 {
+      border-width: thick thin;
+    }
+
+    #div02 .bw-3 {
+      border-width: 20px thick thin;
+    }
+
+    #div02 .bw-4 {
+      border-width: 10px thin 30px thick;
+    }
+
+    #div02 .bc-1 {
+      border-color: red;
+    }
+
+    #div02 .bc-2 {
+      border-color: #00FF00;
+    }
+
+    #div02 .bc-3 {
+      border-color: rgb(0, 0, 255);
+    }
+
+    #div02 .bc-4 {
+      border-top-color: red;
+    }
+
+    #div02 .bc-5 {
+      border-right-color: yellow;
+    }
+
+    #div02 .bc-6 {
+      border-bottom-color: green;
+    }
+
+    #div02 .bc-7 {
+      border-left-color: blue;
+    }
+
+    #div02 .b-1 {
+      /* border : border-width, border-style, border-color 한번에 입력할 수 있는 CSS 속성 */
+      /* border-width, border-style, border-color 는 top, bottom, left, right 에 대한 값을 따로 설정 가능 */
+      /* 일반적으로 사용하는 형태 */
+      /* 한번에 border-width, border-style, border-color 값을 다 설정(생략 가능) */
+      border: 10px solid orange;
+    }
+
+    #div02 .b-2 {
+      /* border-width, border-style 만 입력 */
+      border: 10px dotted;
+    }
+
+    #div02 .b-3 {
+      /* border-width border-color 만 입력 (border-style 가 없어서 안보임) */
+      border: 10px yellowgreen;
+      background-color: cadetblue;
+      border-style: double;
+    }
+
+    #div02 .br-1 {
+      border-radius: 10px;
+    }
+
+    #div02 .br-2 {
+      border-radius: 10%;
+    }
+
+    #div02 .br-3 {
+      /* border-radius 도 4개의 방향으로 값을 각각 설정할 수 있음 */
+      /* top-left > top-right > bottom-right > bottom-left 순서로 입력 */
+      /* 값을 2개만 입력 시 top-left/bottom-right 가 한쌍, top-right/bottom-left 가 한쌍 */
+      /* 4개의 방향에 모두 50% 씩 입력 시 원형이 됨 */
+      border-radius: 5% 10% 15% 20%;
+    }
+
+    #div02 .br-4 {
+      border-top-left-radius: 5%;
+      border-top-right-radius: 10%;
+      border-bottom-right-radius: 15%;
+      border-bottom-left-radius: 20%;
+    }
+
+    #div02 .br-5 {
+      border-radius: 10% 20%;
+    }
+
+    #div02 .br-6 {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div01">
+    <h2>margin/padding</h2>
+
+    <!-- margin / padding 에 값을 설정하는 방식이 여러가지 있음 -->
+    <!-- 1. 하나의 값을 4개의 방향에 모두 동일하게 적용 -->
+    <!-- 2. 4개의 방향에 각각 따로 값을 설정(top > right > bottm > left 순서) -->
+    <!-- 3. 2개의 값을 가로, 세로로 구분하여 값을 설정 (세로 > 가로 순서) -->
+    <!-- 4. 3개의 값 사용 시 top > 가로 > bottom 순서대로 데이를 입력 -->
+    <div class="box" style="margin: 10px;"></div>
+    <div class="box" style="margin: 10px 20px 30px 40px"></div>
+    <div class="box" style="margin: 20px 40px"></div>
+    <div class="box" style="margin: 10px 20px 30px"></div>
+    <br>
+    <!-- margin / padding 은 각 방향에 대해서 각각의 속성이 따로 존재함 -->
+    <!-- margin-top > margin-right > margin-bottom > margin-left -->
+    <div class="box" style="margin-top: 10px; margin-right: 20px;"></div>
+    <div class="box" style="margin-bottom: 30px; margin-left: 40px;"></div>
+    <br><br>
+    <div class="box" style="display: block; margin-bottom: 20px;"></div>
+    <div class="box" style="display: block; margin-top: 40px;"></div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div02">
+    <h2>border-style</h2>
+
+    <div class="box bs-1"></div>
+    <div class="box bs-2"></div>
+    <div class="box bs-3"></div>
+    <div class="box bs-4"></div>
+    <div class="box bs-5"></div>
+    <div class="box bs-6"></div>
+    <div class="box bs-7"></div>
+    <div class="box bs-8"></div>
+    <div class="box bs-9"></div>
+
+    <br><br>
+
+    <h2>border-width</h2>
+
+    <div class="box bw-1"></div>
+    <div class="box bw-2"></div>
+    <div class="box bw-3"></div>
+    <div class="box bw-4"></div>
+    <br><br>
+
+    <h2>border-color</h2>
+
+    <div class="box bc-1"></div>
+    <div class="box bc-2"></div>
+    <div class="box bc-3"></div>
+    <div class="box bc-4"></div>
+    <div class="box bc-5"></div>
+    <div class="box bc-6"></div>
+    <div class="box bc-7"></div>
+
+    <br><br>
+
+    <h2>border</h2>
+
+    <div class="box b-1"></div>
+    <div class="box b-2"></div>
+    <div class="box b-3"></div>
+
+    <br><br>
+
+    <h2>border-radius</h2>
+
+    <div class="box br-1"></div>
+    <div class="box br-2"></div>
+    <div class="box br-3"></div>
+    <div class="box br-4"></div>
+    <div class="box br-5"></div>
+    <div class="box br-6"></div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

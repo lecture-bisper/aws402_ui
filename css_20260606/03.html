@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      width: 1200px;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #div01 p {
+      color: blue;
+    }
+
+    /* 인접 형제 선택자, 지정한 태그 바로 다음에 있는 형제 태그를 선택 */
+    #div01>h1+p {
+      color: purple;
+    }
+
+    #div01>h1~h4 {
+      color: orange;
+    }
+
+    #div02 a {
+      background-color: chocolate;
+    }
+
+    /* 속성 선택자 : 지정한 html 태그에 지정한 속성이 있을 경우 적용 */
+    #div02 a[target] {
+      background-color: khaki;
+    }
+
+    /* 지정한 html 태그에 지정한 속성과 지정한 값이 일치할 경우 적용 */
+    #div02 a[target="_blank"] {
+      background-color: blueviolet;
+    }
+
+    /* 지정한 html 태그에 지정한 속성과 지정한 단어(하나의 단어)가 포함되어 있을 경우 적용 */
+    #div02 a[class~="blue"] {
+      background-color: dodgerblue;
+    }
+
+    /* 지정한 html 태그에 지정한 속성과 지정한 단어(단어 안에 포함)가 포함되어 있을 경우 적용 */
+    #div02 a[class|="en"] {
+      background-color: crimson;
+    }
+
+    /* 지정한 html 태그에 지정한 속성 값이 지정한 텍스트로 시작하면 적용 */
+    #div02 a[class^="test"] {
+      background-color: darkcyan;
+    }
+
+    /* 지정한 html 태그에 지정한 속성 값이 지정한 텍스트로 끝나면 적용 */
+    #div02 a[class$="test"] {
+      background-color: darkorange;
+    }
+
+    /* 지정한 html 태그에 지정한 속성 값 안에 지정한 텍스트가 존재하면 적용 */
+    #div02 a[class*="test"] {
+      background-color: deeppink;
+    }
+
+    #div03 .test:target {
+      border: 2px solid darkcyan;
+      background-color: orange;
+    }
+
+    /* :checked 는 checked 속성이 있는 <input type="checkbox"> <input type="radio"> 에만 사용가능 */
+    #div04 input:checked+label {
+      color: red;
+      font-weight: bold;
+    }
+
+    #div04 input:enabled {
+      background-color: yellowgreen;
+    }
+
+    #div04 input:disabled {
+      background-color: orangered;
+    }
+
+    /* :not(제외할 선택자) : 지정한 선택자가 아닌 태그를 모두 선택하여 스타일 적용 */
+    /* :not 앞에 다른 선택자를 사용하여 선택의 범위를 줄일 수 있음 */
+    #div04 p {
+      color: blue;
+    }
+
+    #div04 .text:not(p) {
+      color: red;
+    }
+
+    #div05 .sub01 :only-child {
+      color: cyan;
+    }
+
+    /* :only-child 는 자식 태그가 1개일 경우에만 스타일 적용 */
+    #div05 .sub02 :only-child {
+      color: coral;
+    }
+
+
+    /* :only-of-type 는 지정한 태그의 자식 태그가 여러개 이고, 그 중 선택한 태그가 1개일 경우 스탈일 적용 */
+    #div05 .sub03 p:only-of-type {
+      color: green;
+    }
+
+    #div05 .sub03 a:only-of-type {
+      color: darkgray;
+    }
+
+    #div05 .sub03 h5:only-of-type {
+      color: khaki;
+    }
+
+    /* :first-child, :last-child 는 종류에 상관없이 지정한 태그의 첫번째 자식 태그를 선택, 마지막 자식 태그를 선택 */
+    #div05 .sub04 :first-child {
+      color: blueviolet;
+    }
+
+    #div05 .sub04 :last-child {
+      color: cadetblue;
+    }
+
+    /* 지정한 태그의 자식 태그로 여러가지 태그가 섞여 있는 상태에서 지정한 태그 중 첫번째 혹은 마지막 태그를 선택 */
+    #div05 .sub05 a:first-of-type {
+      color: darkolivegreen;
+    }
+
+    #div05 .sub05 p:last-of-type {
+      color: darkorange;
+    }
+
+    /* 자식 태그의 종류에 상관없이 순서만 계산하여 선택, 1부터 시작 */
+    /* :nth-child, :nth-last-child 는 번호보다는 odd(홀수), even(짝수) 를 주로 사용함 */
+    #div05 .sub06 :nth-child(odd) {
+      color: lightseagreen;
+    }
+
+    #div05 .sub06 :nth-last-child(even) {
+      color: lightcoral;
+    }
+
+    /* 자식 태그 중 지정한 태그의 순서만 계산하여 스타일 적용, 1부터 시작 */
+    /* odd(홀수), even(짝수) 사용 가능 */
+    #div05 .sub07 p:nth-of-type(2) {
+      color: lightgreen;
+    }
+
+    #div05 .sub07 h6:nth-last-of-type(3) {
+      color: lightcoral;
+    }
+
+    #div05 .sub08 .after::after {
+      content: " - after 로 추가한 컨텐츠";
+    }
+
+    #div05 .sub08 .before::before {
+      content: "before 로 추가한 컨텐츠 - ";
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>형제 선택자</h2>
+
+    <div id="div01">
+      <h1>예약 방법 & 사용 요금</h1>
+      <p>아직 온라인 예약 신청이...</p>
+      <div>
+        <p>가족실(2 ~ 4인) : 60,000원/일</p>
+        <p>도미토리(4인공용) : 25,000원/일</p>
+      </div>
+      <h4>수영장(여름) : 10,000원/일</h4>
+      <p>주차장 : 건물 뒷쪽</p>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <h2>속성 선택자</h2>
+
+    <div id="div02">
+      <ul>
+        <li><a href="#" target="_blank">네이버</a></li>
+        <li><a href="#" target="_self" class="ko-kr">카카오</a></li>
+        <li><a href="#" class="aaa bbb blue ccc en">구글</a></li>
+        <li><a href="#" class="aaa bbb red ccc en-us">Microsoft</a></li>
+        <li><a href="#" class="testaaa bbb green ccc us">네이트</a></li>
+        <li><a href="#" class="test">당근마켓</a></li>
+        <li><a href="#" class="aatesta bbb green ccc us test">토스</a></li>
+      </ul>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <h2>:target</h2>
+
+    <div id="div03">
+      <p><a href="#target1">클릭 시 아래의 첫번째 p 태그가 선택 됨</a></p>
+      <p><a href="#target2">클릭 시 아래의 두번째 p 태그가 선택 됨</a></p>
+      <p><a href="#target3">클릭 시 아래의 세번째 p 태그가 선택 됨</a></p>
+      <br>
+      <p id="target1" class="test">위의 링크 클릭 시 선택될 첫번째 p 태그</p>
+      <p id="target2">위의 링크 클릭 시 선택될 두번째 p 태그</p>
+      <p id="target3" class="test">위의 링크 클릭 시 선택될 세번째 p 태그</p>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div id="div04">
+      <h2>:checked, :enabled, :disabled</h2>
+
+      <div>
+        <h3>:checked</h3>
+        <ul>
+          <li>
+            <input type="radio" name="room" id="basic">
+            <label for="basic">기본형 (최대 2인)</label>
+          </li>
+          <li>
+            <input type="radio" name="room" id="family">
+            <label for="family">가족형 (최대 8인)</label>
+          </li>
+        </ul>
+      </div>
+      <br><br>
+      <div>
+        <h3>:enabled, :disabled</h3>
+
+        <label for="userId">userId : </label>
+        <input type="text" id="userId" name="userId" placeholder="사용자 ID를 입력하세요">
+        <br>
+        <label for="userPwd">userPwd : </label>
+        <input type="text" id="userPwd" name="userPwd" placeholder="사용자 비밀번호를 입력하세요">
+        <br>
+        <label for="userEmail">userEmail : </label>
+        <input type="text" id="userEmail" name="userEmail" placeholder="사용자 Email을 입력하세요" disabled>
+      </div>
+
+      <br><br>
+
+      <div>
+        <h3>:not</h3>
+
+        <div>
+          <p>:not 이 적용되지 않을 p태그</p>
+          <p class="text">:not 이 적용되지 않을 p태그 두번째</p>
+          <p>:not 이 적용되지 않을 p태그 세번째</p>
+          <p class="text">:not 이 적용되지 않을 p태그 네번째</p>
+          <p>:not 이 적용되지 않을 p태그 다섯번째</p>
+
+          <div class="text">:not 이 적용될 div 태그</div>
+          <div>:not 이 적용될 div 태그</div>
+          <a href="#" target="_blank">:not 이 적용될 a 태그</a>
+          <a href="#" target="_blank" class="text">:not 이 적용될 a 태그</a>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+
+    <div id="div05">
+      <h2>문서구조에 따른 가상 클래스 선택자</h2>
+
+      <h3>:only-child, :only-type-of</h3>
+      <div class="sub01">
+        <p>sub01 의 첫번째 자식 태그</p>
+        <p>sub01 의 두번째 자식 태그</p>
+      </div>
+      <br>
+      <div class="sub02">
+        <p>sub02 의 단 하나의 자식 태그</p>
+      </div>
+      <br>
+      <div class="sub03">
+        <p>sub03 의 자식 태그인 첫번째 p 태그</p>
+        <p>sub03 의 자식 태그인 두번째 p 태그</p>
+        <a href="#">sub03 의 자식 태그인 첫번째 a 태그</a><br>
+        <a href="#">sub03 의 자식 태그인 두번째 a 태그</a>
+        <h5>sub03 의 자식 태그인 유일한 h5 태그</h5>
+      </div>
+
+      <br><br>
+
+      <h3>:first-child, :last-child</h3>
+      <div class="sub04">
+        <h5>sub04 의 첫번째 자식 태그</h5>
+        <p>sub04 의 두번째 자식 태그</p>
+        <a>sub04 의 세번째 자식 태그</a>
+        <p>sub04 의 네번째 자식 태그</p>
+        <h6>sub04 의 다섯번째 자식 태그</h6>
+      </div>
+
+      <h3>:first-of-type, :last-of-type</h3>
+      <div class="sub05">
+        <p>sub05 의 첫번째 태그</p>
+        <h4>sub05 의 두번째 태그</h4>
+        <a>sub05 의 세번째 태그</a><br>
+        <a>sub05 의 네번째 태그</a>
+        <p>sub05 의 다섯번째 태그</p>
+        <p>sub05 의 여섯번째 태그</p>
+        <h6>sub05 의 일곱번째 태그</h6>
+        <h6>sub05 의 여덟번째 태그</h6>
+        <h6>sub05 의 아홉번째 태그</h6>
+      </div>
+
+      <br><br>
+
+      <h3>:nth-child, :nth-last-child</h3>
+      <div class="sub06">
+        <p>sub06 의 첫번째 태그</p>
+        <h4>sub06 의 두번째 태그</h4>
+        <a>sub06 의 세번째 태그</a>
+        <a>sub06 의 네번째 태그</a>
+        <p>sub06 의 다섯번째 태그</p>
+        <p>sub06 의 여섯번째 태그</p>
+        <h6>sub06 의 일곱번째 태그</h6>
+        <h6>sub06 의 여덟번째 태그</h6>
+        <h6>sub06 의 아홉번째 태그</h6>
+      </div>
+
+      <br><br>
+
+      <h3>:nth-of-type, :nth-last-of-type</h3>
+      <div class="sub07">
+        <p>sub07 의 첫번째 태그</p>
+        <h4>sub07 의 두번째 태그</h4>
+        <a>sub07 의 세번째 태그</a>
+        <a>sub07 의 네번째 태그</a>
+        <p>sub07 의 다섯번째 태그</p>
+        <p>sub07 의 여섯번째 태그</p>
+        <h6>sub07 의 일곱번째 태그</h6>
+        <h6>sub07 의 여덟번째 태그</h6>
+        <h6>sub07 의 아홉번째 태그</h6>
+      </div>
+
+      <br><br>
+
+      <h3>::after, ::before</h3>
+      <div class="sub08">
+        <p class="after">::after 을 사용하여 현재 태그 뒤에 컨텐츠가 추가 됨 : </p>
+        <p class="after">::after 을 사용하여 추가되는 컨텐츠 : </p>
+        <br>
+        <p class="before">::before 를 사용하여 현재 태그 앞에 컨텐츠가 추가 됨</p>
+        <p class="before">::before 를 사용하여 추가되는 컨텐츠</p>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

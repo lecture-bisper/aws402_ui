@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      max-width: 1200px;
+      border: 1px dashed darkgray;
+      margin: 50px auto 0px;
+      overflow: hidden;
+    }
+
+    .bg {
+      background-color: #EEEEEE;
+      border: 1px solid #222222;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: #00FF00;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .flexbox {
+      display: flex;
+      background-color: #EEEEEE;
+      border: 1px solid #222222;
+      flex-direction: column;
+    }
+
+    .box {
+      padding: 30px;
+      margin: 16px;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 24px;
+      flex-grow: 1;
+    }
+
+    /* 모바일 퍼스트를 적용하여 미디어쿼리에서 지정한 크기보다 화면이 작을 경우 기본 CSS 내용을 사용하고, min-width 보다 화면이 클 경우 미디어쿼리에서 지정한 방식의 CSS를 사용 */
+    @media screen and (min-width: 768px) {
+      .flexbox {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h3>플렉스박스로 반응형 웹 적용하기</h3>
+
+    <div class="flexbox bg">
+      <div class="box red">1</div>
+      <div class="box green">1</div>
+      <div class="box blue">1</div>
+    </div>
+  </div>
+</body>
+
+</html>

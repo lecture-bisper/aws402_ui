@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록 스타일</title>
+
+  <style>
+    /* list-style-type : ul, ol 태그의 불릿의 모양을 변경할 수 있는 속성 */
+    #div01 .book1 {
+      list-style-type: none;
+    }
+
+    #div01 .book2 {
+      list-style-type: decimal-leading-zero;
+    }
+
+    #div01 .book3 {
+      list-style-type: circle;
+    }
+
+    /* list-style-position : ul, ol 태그의 불릿 위치를 들여쓰기 하는 속성 */
+    #div01 .book4 {
+      list-style-position: inside;
+    }
+
+    /* list-style-image : ul, ol 태그의 불릿을 사용자가 지정한 이미지로 사용하는 속성 */
+    #div01 .book5 {
+      list-style-image: url(dot.png);
+    }
+
+    /* list-style : list-style-type, list-style-position, list-style-image 를 한번에 입력할 수 있는 속성, 관련된 값 생략 가능 */
+    /* list-style 로 기본값을 한번에 설정하고, list-style-type, list-style-type, list-style-position, list-style-image 를 사용하여 세부 설정을 함 */
+    #div01 .book6 {
+      list-style: square;
+    }
+
+    #div01 .book7 {
+      list-style: lower-alpha inside;
+    }
+
+    #div01 .book8 {
+      list-style: inside url(dot.png);
+    }
+
+    /* 현재는 table 태그의 border 속성은 사용하지 않음 */
+    /* css 의 border 속성을 사용하여 table 을 꾸며야 함 */
+    /* css 의 border 속성은 지정한 태그의 테두리 선의 형태를 구분하므로, table 에만 border 를 설정하면 가장 밖에 있는 table 에만 테두리가 생김 */
+    /* 각각의 칸을 의미하는 th, td 태그에도 border 속성을 함께 지정해야 함 */
+    #div02 .tb02 {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    #div02 .tb02 th,
+    #div02 .tb02 td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="div01">
+    <h2>list-style-type 사용</h2>
+
+    <div>
+      <ul class="book1">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+
+      <ol class="book2">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ol>
+
+      <ul class="book3">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+
+      <ul class="book4">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+
+      <ul class="book5">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+
+      <ul class="book6">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+
+      <ul class="book7">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+
+      <ul class="book8">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+      </ul>
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div02">
+    <h2>border, border-collapse 사용</h2>
+
+    <div>
+      <table class="tb01" border="1">
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>직업</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>아이유</td>
+          <td>가수</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>유인나</td>
+          <td>배우</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>나형석</td>
+          <td>PD</td>
+        </tr>
+      </table>
+      <br>
+      <table class="tb02">
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>직업</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>아이유</td>
+          <td>가수</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>유인나</td>
+          <td>배우</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>나형석</td>
+          <td>PD</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

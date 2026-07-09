@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텍스트 관련 CSS 속성</title>
+
+  <style>
+    .box {
+      border: 1px solid black;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .box01 {
+      /* width: 500px; */
+    }
+
+    #div01 p.text-start {
+      text-align: start;
+    }
+
+    #div01 p.text-center {
+      text-align: center;
+    }
+
+    #div01 p.text-end {
+      text-align: end;
+    }
+
+    /* 영문 폰트에서만 제대로 적용 */
+    /* 텍스트가 한 라인을 넘어갈 경우 라인의 양쪽 끝에 표현할 수 있는대로 여백없이 텍스트를 표현 */
+    /* text-start 는 오른쪽 끝에 여백을 남김 */
+    #div01 p.text-justify {
+      text-align: justify;
+    }
+
+    #div02 div.lh01 {
+      line-height: normal;
+    }
+
+    #div02 div.lh02 {
+      line-height: 1.6;
+    }
+
+    #div02 div.lh03 {
+      line-height: 80%;
+    }
+
+    #div02 div.lh04 {
+      line-height: 200%;
+    }
+
+    #div03 p.td-none {
+      text-decoration: none;
+    }
+
+    #div03 p.td-underline {
+      text-decoration: underline;
+    }
+
+    #div03 p.td-overline {
+      text-decoration: overline;
+    }
+
+    #div03 p.td-through {
+      text-decoration: line-through;
+    }
+
+    #div03 a.a-td-none {
+      text-decoration: none;
+    }
+
+    #div04 .shadow1 {
+      color: red;
+      text-shadow: 1px 1px black;
+    }
+
+    /* text-shadow 에 그림자 설정값을 여러개 입력할 수 있음 */
+    /* 각각의 그림자 설정은 , 로 구분함 */
+    #div04 .shadow2 {
+      text-shadow: -5px -5px 3px #ffa500, 5px 5px 3px darkcyan, 10px 0 3px dodgerblue;
+    }
+
+    #div04 .shadow3 {
+      color: #FFFFFF;
+      text-shadow: 7px -7px 20px rgb(0, 0, 0);
+    }
+
+    #div05 p.trans01 {
+      text-transform: capitalize;
+    }
+
+    #div05 p.trans02 {
+      text-transform: lowercase;
+    }
+
+    #div05 p.trans03 {
+      text-transform: none;
+    }
+
+    #div05 p.trans04 {
+      text-transform: uppercase;
+    }
+
+    #div06 .ls-normal {
+      letter-spacing: normal;
+    }
+
+    #div06 .ls-02em {
+      letter-spacing: 0.2em;
+    }
+
+    #div06 .ls-05em {
+      letter-spacing: 0.5em;
+    }
+
+    #div06 .ws-normal {
+      word-spacing: normal;
+    }
+
+    #div06 .ws-02em {
+      word-spacing: 0.2em;
+    }
+
+    #div06 .ws-05em {
+      word-spacing: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div01">
+    <h2>text-align 사용</h2>
+
+    <div class="box box01">
+      <p class="text-start">text-align 으로 글자 정렬 : start</p>
+      <p class="text-center">text-align 으로 글자 정렬 : center</p>
+      <p class="text-end">text-align 으로 글자 정렬 : end</p>
+      <h4>text-align : start 일 경우</h4>
+      <p class="text-start">Cras et quam mauris. Nam at ex sem. Integer laoreet leo felis, at molestie arcu faucibus in.
+        Morbi tincidunt elementum sagittis. Ut iaculis tellus in orci facilisis, quis pellentesque nibh vestibulum.
+        Curabitur velit purus, mollis in mauris vel, imperdiet rutrum arcu. Integer non nunc eu mi mollis ultrices.
+        Proin et blandit nisl. Etiam sit amet ex congue est eleifend lobortis. Phasellus at risus id dolor efficitur
+        cursus. Duis et convallis sem. Sed eleifend fermentum bibendum. Quisque turpis risus, auctor ut condimentum ut,
+        tristique a ex. Suspendisse potenti. Mauris tristique dolor ac bibendum aliquam. Proin eget mi fermentum,
+        elementum tortor eget, condimentum enim.</p>
+      <h4>text-align : justify 일 경우</h4>
+      <p class="text-justify">Cras et quam mauris. Nam at ex sem. Integer laoreet leo felis, at molestie arcu faucibus
+        in.
+        Morbi tincidunt elementum sagittis. Ut iaculis tellus in orci facilisis, quis pellentesque nibh vestibulum.
+        Curabitur velit purus, mollis in mauris vel, imperdiet rutrum arcu. Integer non nunc eu mi mollis ultrices.
+        Proin et blandit nisl. Etiam sit amet ex congue est eleifend lobortis. Phasellus at risus id dolor efficitur
+        cursus. Duis et convallis sem. Sed eleifend fermentum bibendum. Quisque turpis risus, auctor ut condimentum ut,
+        tristique a ex. Suspendisse potenti. Mauris tristique dolor ac bibendum aliquam. Proin eget mi fermentum,
+        elementum tortor eget, condimentum enim.</p>
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div02">
+    <h2>line-height 사용하기</h2>
+
+    <div class="lh03">line-height : 80% <br>line-height 에 값을 백분율 80% 로 지정했을 경우</div><br><br>
+    <div class="lh02">line-height : 1.6<br>line-height 에 값을 직접 지정했을 경우</div><br><br>
+    <div class="lh01">line-height : normal (기본값)<br>html 에 적용된 기본값을 사용했을 경우</div><br><br>
+    <div class="lh04">line-height : 200%<br>line-height 에 값을 백분율 200% 로 지정했을 경우</div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div03">
+    <h2>text-decoration 사용하기</h2>
+
+    <div>
+      <p class="td-none">text-decoration : none 사용 (기본값)</p>
+      <p class="td-underline">text-decoration : underline 사용</p>
+      <p class="td-through">text-decoration : line-through 사용</p>
+      <p class="td-overline">text-decoration : overline 사용</p>
+      <a href="#" class="a-td-none">a 태그에 text-decoration : none 사용</a><br>
+      <a href="#">a 태그는 text-decoration : underline 기본 사용됨</a>
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div04">
+    <h2>text-shadow 사용하기</h2>
+
+    <h1 class="shadow1">HTML5</h1>
+    <h1>웹 프로그래밍</h1>
+    <h1 class="shadow2">CSS3</h1>
+    <h1 class="shadow3">자바스크립트</h1>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div05">
+    <h2>text-transform 사용하기</h2>
+
+    <div>
+      <h3 class="trans01">html5</h3>
+      <h3 class="trans02">CSS3</h3>
+      <h3 class="trans03">JavaScript</h3>
+      <h3 class="trans04">sprING fRaMeWoRk</h3>
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div id="div06">
+    <h2>letter-spacing, word-spacing</h2>
+
+    <div>
+      <h3 class="ls-normal">JavaScript</h3>
+      <h3 class="ls-02em">JavaScript</h3>
+      <h3 class="ls-05em">JavaScript</h3>
+      <h3 class="ws-normal">단어의 간격을 조절하는 word spacing 입니다.</h3>
+      <h3 class="ws-02em">단어의 간격을 조절하는 word spacing 입니다.</h3>
+      <h3 class="ws-05em">단어의 간격을 조절하는 word spacing 입니다.</h3>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

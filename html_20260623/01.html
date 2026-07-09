@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 사용하기</title>
+</head>
+
+<body>
+  <h2>이미지 사용하기</h2>
+
+  <div>
+    <img src="mic.jpg" alt="방송용 카메라">
+    <!-- alt 속성 생략 -->
+    <img src="mic.jpg" alt="">
+    <!-- 하위 폴더에 있는 이미지 사용 -->
+    <img src="images/link.png" alt="영상 썸네일">
+
+    <hr>
+
+    <!-- img 태그의 width, height 속성은 실제로는 사용하지 않음 -->
+    <!-- css 의 width, height 속성을 주로 사용함 -->
+    <img src="images/link.png" alt="썸네일 원본 크기"><br>
+    <img src="images/link.png" alt="썸네일 50% 크기" width="50%" height="50%"><br>
+    <!-- 가로나 세로 한가지만 사용 시 이미지의 원본 비율을 유지함 -->
+    <img src="images/link.png" alt="썸네일 50% 크기, 가로만 설정" width="50%"><br>
+    <img src="images/link.png" alt="썸네일 50% 크기, 세로만 설정" height="50%"><br>
+    <img src="images/link.png" alt="썸네일, 절대값으로 설정" width="600px" height="400px"><br>
+    <img src="images/link.png" alt="썸네일, 절대값 가로 세로 같은 크기" width="400px" height="400px">
+
+    <br>
+    <hr><br>
+
+    <h2>a 태그로 하이퍼링크 사용하기</h2>
+
+    <!-- a 태그는 다른 페이지로 이동하기 위한 기능 -->
+    <!-- target의 기본값은 _self -->
+    <a href="https://www.naver.com">네이버 홈페이지</a>
+    <a href="https://www.daum.net" target="_blank">다음 홈페이지</a>
+    <a href="https://www.google.co.kr" target="_self">구글 홈페이지</a>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

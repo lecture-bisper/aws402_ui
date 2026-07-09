@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      width: 1200px;
+      margin: 50px auto 0px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 8px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: #00FF00;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    /* @keyframes : 실제 동작할 애니메이션을 설정 */
+    /* 시작과 끝 두 단계만 있을 경우 from, to 사용 */
+    /* 0 ~ 100 % 를 사용하여 여러 단계의 애니메이션을 실행할 수 있음 */
+    @keyframes aniColorChange {
+      from {
+        background-color: red;
+      }
+
+      to {
+        background-color: yellow;
+      }
+    }
+
+    .ani1:hover {
+      animation-name: aniColorChange;
+      animation-duration: 3s;
+    }
+
+    @keyframes aniColorChange2 {
+      0% {
+        background-color: #00FF00;
+      }
+
+      100% {
+        background-color: blue;
+      }
+    }
+
+    .ani2:hover {
+      animation-name: aniColorChange2;
+      animation-duration: 3s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes aniColorChange3 {
+      0% {
+        background-color: blue;
+        transform: rotate(0deg);
+      }
+
+      20% {
+        background-color: purple;
+      }
+
+      40% {
+        background-color: hotpink;
+      }
+
+      60% {
+        background-color: yellowgreen;
+      }
+
+      80% {
+        background-color: darkorange;
+      }
+
+      100% {
+        background-color: cornflowerblue;
+        transform: rotate(360deg);
+      }
+    }
+
+    .ani3:hover {
+      animation-name: aniColorChange3;
+      animation-duration: 5s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-delay: 0.5s;
+      animation-timing-function: linear;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="div01" class="container">
+    <h2>animation</h2>
+
+    <div class="box red ani1"></div>
+    <div class="box green ani2"></div>
+    <div class="box blue ani3"></div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      width: 1200px;
+      margin: 50px auto 0px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 8px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: greenyellow;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    .translate:hover {
+      transform: translate(100px, 100px);
+    }
+
+    .translate-x:hover {
+      transform: translateX(100px);
+    }
+
+    .translate-y:hover {
+      transform: translateY(100px);
+    }
+
+    .translate-3d:hover {
+      transform: translate3d(100px, 100px, 100px);
+    }
+
+    .translate-z:hover {
+      transform: translateZ(100px);
+    }
+
+    .scale:hover {
+      transform: scale(1.5, 1.5);
+    }
+
+    .scale-x:hover {
+      transform: scaleX(1.5);
+    }
+
+    .scale-y:hover {
+      transform: scaleY(1.5);
+    }
+
+    .rotate-plus:hover {
+      transform: rotate(25deg);
+    }
+
+    .rotate-minus:hover {
+      transform: rotate(-25deg);
+    }
+
+    .rotate-3d:hover {
+      transform: rotate3d(2.5, 1.2, -1.5, 50deg);
+    }
+
+    .rotate-x:hover {
+      transform: rotateX(45deg);
+    }
+
+    .rotate-y:hover {
+      transform: rotateY(45deg);
+    }
+
+    .skew:hover {
+      transform: skew(30deg, 30deg);
+    }
+
+    .skew-x:hover {
+      transform: skewX(30deg);
+    }
+
+    .skew-y:hover {
+      transform: skewY(30deg);
+    }
+
+
+    .tr-width:hover {
+      width: 1000px
+    }
+
+    .transition1 {
+      transition-property: width;
+      transition-duration: 3s;
+      transition-timing-function: ease;
+    }
+
+    .transition2 {
+      transition-duration: 3s;
+      transition-property: width;
+      transition-timing-function: ease-in-out;
+      transition-delay: 2s;
+    }
+
+    .transition3 {
+      transition: 3s width ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Transform</h2>
+
+    <div id="div01">
+      <h3>2d translate</h3>
+      <div class="box red translate"></div>
+      <div class="box red translate-x"></div>
+      <div class="box red translate-y"></div>
+    </div>
+
+    <br><br>
+
+    <div id="div02">
+      <h3>3d translate</h3>
+      <div class="box green translate-3d"></div>
+      <div class="box green translate-z"></div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div id="div03">
+      <h3>scale</h3>
+
+      <div class="box blue scale"></div>
+      <div class="box blue scale-x"></div>
+      <div class="box blue scale-y"></div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div id="div04">
+      <h3>rotate</h3>
+
+      <div class="box orange rotate-plus">로테이트 사용</div>
+      <div class="box orange rotate-minus">로테이트 사용</div>
+      <div class="box orange rotate-3d">로테이트 사용</div>
+      <div class="box orange rotate-x">로테이트 사용</div>
+      <div class="box orange rotate-y">로테이트 사용</div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div id="div05">
+      <h3>skew</h3>
+
+      <div class="box yellow skew"></div>
+      <div class="box yellow skew-x"></div>
+      <div class="box yellow skew-y"></div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div id="div06">
+      <h3>transition</h3>
+
+      <div class="box red transition1 tr-width"></div>
+      <div class="box red transition2 tr-width"></div>
+      <div class="box red transition3 tr-width"></div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

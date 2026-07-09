@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      /* width, height 의 크기를 border 까지의 크기로 설정 */
+      box-sizing: border-box;
+    }
+
+    body {
+      /* 화면 전체 사용 */
+      margin: 0px;
+    }
+
+    /* 제목 부분 */
+    header {
+      /* 텍스트 중앙 정렬 */
+      text-align: center;
+      padding: 32px;
+      margin: 50px auto 0px;
+    }
+
+    /* 이미지가 출력되는 메인 컨텐츠 부분 */
+    .container {
+      /* 플렉스박스 사용 설정 */
+      display: flex;
+      /* 줄바꿈 기능 */
+      flex-wrap: wrap;
+      /* flex-direction: row; */
+      padding: 0 4px;
+    }
+
+    /* 모바일 퍼스트로 적용하여 기본 CSS에서는 화면 전체 사용 */
+    .column {
+      /* 플렉스박스에서 제공하는 flex-basis 를 사용하여 태그의 크기 설정, 100% 로 설정하여 부모 태그의 너비만큼 다 사용 */
+      flex-basis: 100%;
+      /* 최대 너비 100% 로 설정 */
+      max-width: 100%;
+      /* 좌우의 여백을 4px씩 줌 */
+      padding: 0 4px;
+    }
+
+    /* 자손 선택자로 img 태그를 선택 */
+    .column img {
+      /* 이미지의 테두리 외부 상단 영역에 8px */
+      margin-top: 8px;
+      /* vertical-align: middle; */
+    }
+
+    .w-100 {
+      /* 이미지에 사용, 부모 태그의 너비만큼 이미지의 너비도 100% 다 사용 */
+      width: 100%;
+    }
+
+    /* 화면 너비가 768px 이상일 경우 적용 */
+    @media screen and (min-width: 768px) {
+      .column {
+        /* 태그의 크기를 50% 로 설정 */
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* 화면 너비가 992px 이상일 경우 적용 */
+    @media screen and (min-width: 992px) {
+      .column {
+        /* 태그의 크기를 25% 로 설정 */
+        flex-basis: 25%;
+        max-width: 25%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>반응형 웹 이미지 갤러리</h1>
+  </header>
+
+  <main class="container">
+    <div class="column">
+      <img src="images/wedding.jpg" alt="" class="w-100">
+      <img src="images/rocks.jpg" alt="" class="w-100">
+      <img src="images/falls2.jpg" alt="" class="w-100">
+      <img src="images/paris.jpg" alt="" class="w-100">
+      <img src="images/nature.jpg" alt="" class="w-100">
+      <img src="images/mist.jpg" alt="" class="w-100">
+      <img src="images/paris.jpg" alt="" class="w-100">
+    </div>
+    <div class="column">
+      <img src="images/underwater.jpg" alt="" class="w-100">
+      <img src="images/ocean.jpg" alt="" class="w-100">
+      <img src="images/wedding.jpg" alt="" class="w-100">
+      <img src="images/mountainskies.jpg" alt="" class="w-100">
+      <img src="images/rocks.jpg" alt="" class="w-100">
+      <img src="images/underwater.jpg" alt="" class="w-100">
+    </div>
+    <div class="column">
+      <img src="images/wedding.jpg" alt="" class="w-100">
+      <img src="images/rocks.jpg" alt="" class="w-100">
+      <img src="images/falls2.jpg" alt="" class="w-100">
+      <img src="images/paris.jpg" alt="" class="w-100">
+      <img src="images/nature.jpg" alt="" class="w-100">
+      <img src="images/mist.jpg" alt="" class="w-100">
+      <img src="images/paris.jpg" alt="" class="w-100">
+    </div>
+    <div class="column">
+      <img src="images/underwater.jpg" alt="" class="w-100">
+      <img src="images/ocean.jpg" alt="" class="w-100">
+      <img src="images/wedding.jpg" alt="" class="w-100">
+      <img src="images/mountainskies.jpg" alt="" class="w-100">
+      <img src="images/rocks.jpg" alt="" class="w-100">
+      <img src="images/underwater.jpg" alt="" class="w-100">
+    </div>
+  </main>
+</body>
+
+</html>

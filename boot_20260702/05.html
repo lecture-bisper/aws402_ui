@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <h2>checkbox, radio</h2>
+
+    <div>
+      <h3>checkbox</h3>
+      <!-- checkbox 를 부트스트랩에서 디자인하여 제공 -->
+      <!-- checkbox 는 <input> 태그에 .form-control 대신 .form-check-input 클래스를 사용 -->
+      <!-- chekcbox 와 한쌍인 <label> 태그도 .form-label 대신 .form-check-label 클래스 사용 -->
+      <!-- 부모 태그인 <div> 태그에 .form-check 클래스를 추가하여 사용 -->
+
+      <form action="">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="chk1" name="opt" value="1" checked>
+          <label for="chk1" class="form-check-label">Option 1</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="chk2" name="opt" value="2">
+          <label for="chk2" class="form-check-label">Option 2</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="chk3" name="opt" value="3">
+          <label for="chk3" class="form-check-label">Option 3</label>
+        </div>
+      </form>
+
+      <br>
+
+      <!-- checkbox 의 목록을 가로로 출력 시 <div> 태그에 .form-check-inline 클래스를 추가함 -->
+      <form action="">
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="fruit1" name="fruit1" value="apple">
+          <label for="fruit1" class="form-check-label">사과</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="fruit2" name="fruit2" value="banana">
+          <label for="fruit2" class="form-check-label">바나나</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="fruit3" name="fruit3" value="orange">
+          <label for="fruit3" class="form-check-label">오렌지</label>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>radio</h3>
+      <!-- radio 버튼도 부트스트랩에서 디자인하여 제공 -->
+      <!-- checkbox 와 사용방법이 동일함 -->
+
+      <form action="">
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="fruitRadio" value="apple" checked>
+          <label for="radio1" class="form-check-label">사과</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio2" name="fruitRadio" value="banana">
+          <label for="radio2" class="form-check-label">바나나</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio3" name="fruitRadio" value="orange">
+          <label for="radio3" class="form-check-label">오렌지</label>
+        </div>
+      </form>
+
+      <br>
+
+      <form action="">
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="radio4" name="fruitRadio2" value="apple" checked>
+          <label for="radio4" class="form-check-label">사과</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="radio5" name="fruitRadio2" value="banana">
+          <label for="radio5" class="form-check-label">바나나</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="radio6" name="fruitRadio2" value="orange">
+          <label for="radio6" class="form-check-label">오렌지</label>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>toggle switch</h3>
+      <!-- checkbox 를 부트스트랩에서 디자인 수정하여 toggle switch 를 제공함 -->
+      <!-- 부모 태그인 <div> 태그에 .form-switch 클래스를 추가하여 사용함 -->
+
+      <form action="">
+        <div class="form-check form-switch">
+          <input type="checkbox" class="form-check-input" id="myswitch" name="myswitch" value="yes">
+          <label for="myswitch" class="form-check-label"></label>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>range</h3>
+      <!-- 슬라이드바를 사용하여 지정된 값을 입력하는 range 부트스트랩이 디자인하여 제공함 -->
+      <!-- <input> 태그에 .form-range 클래스를 추가하여 사용 -->
+      <!-- step, min, max 속성을 사용하여 1칸당 변경한 값 크기 설정, 최소/최대값 설정 -->
+
+      <form action="">
+        <div class="mt-3">
+          <label for="range1" class="form-label">기본 range</label>
+          <input type="range" id="range1" name="range1" min="0" max="10" value="5">
+        </div>
+        <div class="mt-3">
+          <label for="range2" class="form-label">부트스트랩 range</label>
+          <input type="range" class="form-range" id="range2" name="range2" step="1" min="0" max="10" value="5">
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>file select</h3>
+      <!-- 파일을 선택하기 위한 <input> 를 부트스트랩에서 디자인하여 제공 -->
+      <!-- .form-control 클래스 사용, .form-control-sm, .form-control-lg 를 사용하여 크기 설정 -->
+      <!-- disabled 속성을 추가하여 비활성화 가능, multiple 속성을 추가하여 여러 개의 파일 선택 -->
+
+      <form action="">
+        <div class="mt-3">
+          <label for="file1" class="form-label">기본 파일</label>
+          <input type="file" id="file1" name="file1">
+        </div>
+        <div class="mt-3">
+          <label for="file2" class="form-label">부트스트랩 file</label>
+          <input type="file" class="form-control" id="file2" name="file2">
+        </div>
+        <div class="mt-3">
+          <label for="file3" class="form-label">부트스트랩 다중 file </label>
+          <input type="file" class="form-control" id="file3" name="file3" multiple>
+        </div>
+        <div class="mt-3">
+          <label for="file4" class="form-label">부트스트랩 작은 file</label>
+          <input type="file" class="form-control form-control-sm" id="file4" name="file4" disabled>
+        </div>
+        <div class="mt-3">
+          <label for="file5" class="form-label">부트스트랩 큰 file</label>
+          <input type="file" class="form-control form-control-lg" id="file5" name="file5">
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>floating label</h3>
+      <!-- 부트스트랩에서의 <label> 태그는 <input> 태그의 위나 아래에 위치함 -->
+      <!-- floating label 을 사용 시 <input> 태그 안에 placeholder 처럼 label 텍스트가 <input> 태그 안에 표시됨 -->
+      <!-- 부모인 <div> 태그에 .form-floating 클래스를 추가하여 사용 -->
+      <!-- <textarea>, <select> 태그에도 사용 가능 -->
+
+      <form action="">
+        <div class="mt-3">
+          <label for="txt1" class="form-label">부트스트랩 기본 text box</label>
+          <input type="text" class="form-control" id="txt1" name="txt1" placeholder="글자를 입력하세요">
+        </div>
+        <div class="mt-3">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="txt2" name="txt2" placeholder="Floating Label 을 사용함">
+            <label for="txt2">Floating Label 을 사용함</label>
+          </div>
+        </div>
+        <div class="mt-3">
+          <div class="form-floating">
+            <!-- <textarea> 태그에 floating label 사용 시 rows 속성이 무시됨, css 의 height 속성으로 높이를 설정 -->
+            <textarea class="form-control" name="commu" id="commu" rows="5" placeholder="Floating Label"
+              style="height: 150px;"></textarea>
+            <label for="commu">Floating Label</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

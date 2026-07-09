@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 24px;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트사용하기</title>
+
+  <!-- link 태그를 사용하여 구글 웹 폰트를 가져와서 사용하기 -->
+  <!-- html 문서 안에서만 사용 가능 -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dongle&family=Nanum+Pen+Script&family=Song+Myung&display=swap"
+    rel="stylesheet"> -->
+
+  <style>
+    /* import 를 사용하여 구글 웹 폰트를 가져와서 사용하기 */
+    /* css 파일 안에서 사용가능한 방법 */
+    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dongle&family=Nanum+Pen+Script&family=Song+Myung&display=swap');
+
+    #font01 {
+      font-family: 궁서체, 궁서, 바탕체;
+    }
+
+    #font02 {
+      font-family: "Do Hyeon", sans-serif;
+    }
+
+    #font03 {
+      font-family: "Nanum Pen Script", cursive;
+    }
+
+    #font04 {
+      font-family: "Dongle", sans-serif;
+    }
+
+    #font05 {
+      font-family: "Song Myung", serif;
+    }
+
+    #px01 {
+      font-size: 8px;
+    }
+
+    #px02 {
+      font-size: 16px;
+    }
+
+    #px03 {
+      font-size: 24px;
+    }
+
+    #px04 {
+      font-size: 32px;
+    }
+
+    #em01 {
+      font-size: 0.5em;
+    }
+
+    #em02 {
+      font-size: 1em;
+    }
+
+    #em03 {
+      font-size: 1.5em;
+    }
+
+    #em04 {
+      font-size: 2em;
+    }
+
+    #rem01 {
+      font-size: 0.5rem;
+    }
+
+    #rem02 {
+      font-size: 1rem;
+    }
+
+    #rem03 {
+      font-size: 1.5rem;
+    }
+
+    #rem04 {
+      font-size: 2rem;
+    }
+
+    #per01 {
+      font-size: 100%;
+    }
+
+    #per02 {
+      font-size: 200%;
+    }
+
+    #cname01 {
+      color: red;
+    }
+
+    #cname02 {
+      color: green;
+    }
+
+    #cname03 {
+      color: blue;
+    }
+
+    #c16_01 {
+      color: #FF0000;
+    }
+
+    #c16_02 {
+      color: #00FF00;
+    }
+
+    #c16_03 {
+      color: #0000FF;
+    }
+
+    #crgb01 {
+      color: rgb(255, 0, 0);
+    }
+
+    #crgb02 {
+      color: rgb(0, 255, 0);
+    }
+
+    #crgb03 {
+      color: rgb(0, 0, 255);
+    }
+
+    #crgba01 {
+      color: rgba(25, 25, 112, 1.0);
+    }
+
+    #crgba02 {
+      color: rgba(25, 25, 112, 0.7);
+    }
+
+    #crgba03 {
+      color: rgba(25, 25, 112, 0.4);
+    }
+
+    #crgba04 {
+      color: rgba(25, 25, 112, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>font 사용하기</h3>
+
+    <p>기본 폰트를 사용한 텍스트</p>
+    <p id="font01">폰트를 변경한 텍스트</p>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div>
+    <h3>구글 폰트 사용하기</h3>
+    <p>기본 폰트를 사용한 텍스트</p>
+    <h3 id="font02">구글 폰트를 사용한 텍스트</h3>
+    <h3 id="font03">구글 폰트에서 두번째로 가져온 폰트로 텍스트 출력</h3>
+    <h3 id="font04">구글 폰트에서 두번째로 가져온 폰트로 텍스트 출력</h3>
+    <h3 id="font05">구글 폰트에서 두번째로 가져온 폰트로 텍스트 출력</h3>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div>
+    <h3>font-size 사용하기</h3>
+    <p>기본 크기의 텍스트</p>
+    <p id="px01">px 로 지정한 텍스트 크기 1 (8px)</p>
+    <p id="px02">px 로 지정한 텍스트 크기 2 (16px)</p>
+    <p id="px03">px 로 지정한 텍스트 크기 3 (24px)</p>
+    <p id="px04">px 로 지정한 텍스트 크기 4 (32px)</p>
+    <br>
+    <p id="em01">em 으로 지정한 텍스트 크기 1 (0.5em)</p>
+    <p id="em02">em 으로 지정한 텍스트 크기 2 (1em)</p>
+    <p id="em03">em 으로 지정한 텍스트 크기 3 (1.5em)</p>
+    <p id="em04">em 으로 지정한 텍스트 크기 4 (2em)</p>
+    <br>
+    <p id="rem01">rem 으로 지정한 텍스트 크기 1 (0.5rem)</p>
+    <p id="rem02">rem 으로 지정한 텍스트 크기 2 (1rem)</p>
+    <p id="rem03">rem 으로 지정한 텍스트 크기 3 (1.5rem)</p>
+    <p id="rem04">rem 으로 지정한 텍스트 크기 4 (2rem)</p>
+    <br>
+    <p id="per01">% 으로 지정한 텍스트 크기 1 (100%)</p>
+    <p id="per02">% 으로 지정한 텍스트 크기 2 (200%)</p>
+
+    <br><br>
+
+    <h4>em 과 rem 의 차이</h4>
+    <!-- em과 rem의 차이 -->
+    <!-- em과 rem 은 둘다 배율을 통해서 텍스트의 크기를 결정하는 단위 -->
+    <!-- em은 텍스트의 크기를 부모 태그의 텍스트 크기를 기준으로 자신의 텍스트 크기를 결정 -->
+    <!-- rem은 root 태그의 텍스트 크기를 기준으로 자신의 텍스트 크기를 결정 -->
+    <div>
+      <p style="font-size: 2em;">em으로 font-size를 설정한 텍스트</p>
+      <div style="font-size: 24px;">
+        <p style="font-size: 2em;">자식 태그에 em으로 font-size를 설정한 텍스트</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-size: 2rem;">rem으로 font-size를 설정한 텍스트</p>
+      <div style="font-size: 24px;">
+        <p style="font-size: 2rem;">자식 태그에 rem으로 font-size를 설정한 텍스트</p>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <h3>font-style, font-weight 사용하기</h3>
+    <div>
+      <p style="font-size: 2rem; font-style: normal;">font-style 을 normal 로 설정</p>
+      <p style="font-size: 2rem; font-style: italic;">font-style 을 italic 로 설정</p>
+      <p style="font-size: 2rem; ">font-weight 를 기본값으로 사용</p>
+      <p style="font-size: 2rem; font-weight: 100;">font-weight 를 100 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: 400;">font-weight 를 400 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: 700;">font-weight 를 700 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: 900;">font-weight 를 900 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: normal;">font-weight 를 normal 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: bold;">font-weight 를 bold 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: bolder;">font-weight 를 bolder 으로 설정</p>
+      <p style="font-size: 2rem; font-weight: lighter;">font-weight 를 lighter 으로 설정</p>
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <h2>color 설정하기</h2>
+
+  <div>
+    <!-- https://www.w3schools.com/colors/colors_names.asp 참고 -->
+    <p id="cname01">컬러 이름으로 색상 지정하기 1</p>
+    <p id="cname02">컬러 이름으로 색상 지정하기 2</p>
+    <p id="cname03">컬러 이름으로 색상 지정하기 3</p>
+    <p id="c16_01">16진수로 색상 지정하기 1</p>
+    <p id="c16_02">16진수로 색상 지정하기 3</p>
+    <p id="c16_03">16진수로 색상 지정하기 3</p>
+    <p id="crgb01">rgb() 로 색상 지정하기 1</p>
+    <p id="crgb02">rgb() 로 색상 지정하기 2</p>
+    <p id="crgb03">rgb() 로 색상 지정하기 3</p>
+    <p id="crgba01">rgba() 로 색상 지정하기 1</p>
+    <p id="crgba02">rgba() 로 색상 지정하기 2</p>
+    <p id="crgba03">rgba() 로 색상 지정하기 3</p>
+    <p id="crgba04">rgba() 로 색상 지정하기 4</p>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

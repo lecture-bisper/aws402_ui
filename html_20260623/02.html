@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h2>object 태그 사용하기</h2>
+
+    <div>
+      <object data="samsung_ssd.pdf" width="50%" height="700px"></object>
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div>
+    <h2>embed 태그 사용하기</h2>
+
+    <div>
+      <!-- <embed src="media/spring.mp3"> -->
+      <br>
+      <embed src="https://www.nate.com" width="50%" height="500px">
+    </div>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <div>
+    <h2>audio 태그 사용하기</h2>
+
+    <!-- <source> : audio, video 태그의 자식 태그로 사용하는 태그 -->
+    <!-- 동일한 미디어 파일을 여러개의 미디어 타입으로 지정하여 해당 브라우저에서 지정한 미디어가 재생되지 않을 경우 다른 미디어 파일을 재생하도록 하는 태그 -->
+    <!-- audio / video 태그의 자식 태그로 source 태그를 여러개 입력하여 사용 -->
+    <!-- source 태그에도 src 속성이 존재함 -->
+    <div>
+      <audio src="media/spring.mp3" controls loop autoplay muted>
+        <!-- spring.webm 파일이 없을 경우 자동으로 spring.mp3 파일이 재생됨 -->
+        <source src="media/spring.webm">
+        <source src="media/spring.mp3">
+      </audio>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>video 태그 사용하기</h3>
+      <div>
+        <video src="media/salad.mp4" width="480" height="320" controls autoplay loop muted></video>
+
+        <br>
+
+        <video width="480" height="320" controls autoplay loop muted>
+          <source src="media/salad.webm">
+          <source src="media/salad.mp4">
+        </video>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <h3>유튜브 영상 사용하기</h3>
+
+    <div>
+      <!-- 유튜브 영상 자동 재생 시 반드시 음소거를 해야 함 -->
+      <!-- 유튜브 영상 URL 뒤에 '?autoplay=1&mute=1' 을 추가  -->
+      <iframe width="1236" height="695" src="https://www.youtube.com/embed/fCBnmzjg4l0?autoplay=1&mute=1"
+        title="코인붐 때의 재림! AI로 인한 가격 폭등, 아무도 예상 못한 30년 만의 공급 부족(램, 하드, SSD 등) 외 | 게임 헤드라인" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="1335" height="751" src="https://www.youtube.com/embed/HmXgtvZsXmo?autoplay=1&mute=1"
+        title="미국 목수들 쓰라고 만들었더니 한국 에어컨 업자들 사이에서 대박난(?) 오토해머 【🤴Ep.545】" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

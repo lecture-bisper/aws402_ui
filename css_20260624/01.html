@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 사용하기</title>
+
+  <style>
+    /* 전체 선택자 : * 기호를 사용, 해당 페이지의 모든 html 태그에 대해서 스타일을 적용함, 해당 페이지의 기본 스타일 설정 시 사용 */
+    * {
+      margin: 0;
+      /* background-color: cornflowerblue; */
+    }
+
+    /* 태그 선택자 : 현재 문서 안에서 사용자가 지정한 태그 전체에 대해 스타일을 적용, 기본 스타일 적용 시 사용 */
+    p {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    /* id 선택자 : 현재 문서 안에서 유일한 값으로 html 태그를 선택, # 기호를 사용 */
+    /* id 속성값을 중복할 수 없음 */
+    /* id 속성값이 중복되어 있을 경우 사용자가 원치않는 스타일이 적용될 수 있음 */
+    #container {
+      width: 500px;
+      /* margin : html 태그의 테두리선 외부의 공간을 의미 */
+      margin: 10px auto;
+      /* padding : html 태그의 테두리선과 컨텐츠 사이의 공간을 의미 */
+      padding: 10px;
+      /* border : html 태그의 테두리선을 의미 */
+      border: 1px solid black;
+    }
+
+    #tagp {
+      color: cyan;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      background-color: hotpink;
+    }
+
+    /* class 선택자 : 현재 html 문서에서 지정한 class 속성값으로 지정한 태그를 선택하여 스타일 적용 */
+    /* . 기호를 사용 */
+    /* 하나의 html 태그가 여러 개의 class 속성값을 가질 수 있음 */
+    /* 종류가 다른 html 태그에 하나의 class 속성값을 공유하여 가질 수 있음 */
+    /* 여러 개의 html 태그에 하나의 class 속성값을 공유하여 사용할 수 있음 */
+    .accent {
+      border: 10px dashed black;
+      padding: 5px;
+    }
+
+    .bg {
+      background-color: cadetblue;
+    }
+
+    /* h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    } */
+
+    /* 그룹 선택자 : 중복되는 속성명 및 속성값을 사용하는 선택자를 모아서 한번에 입력하는 선택자 */
+    /* 선택자별 구분은 , 로 구분함 */
+    h2,
+    p {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="images/cat01.jpg" alt="고양이01">
+
+  <br>
+
+  <div>
+    <h2>레드향</h2>
+    <p>껍질에 붉은 빛이 돌아 레드향이라 한다</p>
+    <p>레드향은 한라봉과 교배한 것으로 ...</p>
+    <p>비타민 C와 비타민 P가 풍부해 ...</p>
+  </div>
+
+  <br>
+
+  <div id="container">
+    <h2>레드향</h2>
+    <p>껍질에 붉은 빛이 돌아 레드향이라 한다</p>
+    <p id="tagp">레드향은 한라봉과 교배한 것으로 ...</p>
+    <p>비타민 C와 비타민 P가 풍부해 ...</p>
+  </div>
+
+  <br>
+
+  <div>
+    <h2 class="accent bg">레드향</h2>
+    <p>껍질에 붉은 빛이 돌아 <span class="bg">레드향</span>이라 한다</p>
+    <p>레드향은 한라봉과 교배한 것으로 ...</p>
+    <p>비타민 C와 비타민 P가 풍부해 ...</p>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

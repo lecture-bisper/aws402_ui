@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      width: 1200px;
+      margin: 50px auto;
+      padding: 8px;
+      border: 1px dashed lightgray;
+    }
+
+    .box {
+      /* width 가 없음, 컨텐츠 혹은 자식 태그의 크기가 부모의 width 가 됨 */
+      padding: 30px;
+      margin: 16px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .bg {
+      background-color: #EEEEEE;
+      border: 1px solid #222222;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: rgb(0, 255, 0);
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .flexbox {
+      display: flex;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    .float-left {
+      float: left;
+    }
+
+    .flex-direction-row {
+      flex-direction: row;
+    }
+
+    .flex-direction-row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .flex-direction-column {
+      flex-direction: column;
+    }
+
+    .flex-direction-column-reverse {
+      flex-direction: column-reverse;
+    }
+
+    .flex-nowrap {
+      flex-wrap: nowrap;
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+
+    .flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+
+    .no-flex-flow {
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+    }
+
+    .flex-flow {
+      flex-flow: row-reverse wrap;
+    }
+
+
+    /* justify-content 는 자식 태그의 정렬 방식을 지정 */
+    .jc-start {
+      justify-content: flex-start;
+    }
+
+    .jc-center {
+      justify-content: center;
+    }
+
+    .jc-end {
+      justify-content: flex-end;
+    }
+
+    /* 양끝의 태그는 margin-left 나 margin-right 가 0이고, 나머지는 margin-left, margin-right 의 값이 같음 */
+    .jc-space-between {
+      justify-content: space-between;
+    }
+
+    /* 모든 태그의 margin-left, margin-right 의 크기가 동일함 */
+    .jc-space-around {
+      justify-content: space-around;
+    }
+
+    /* 모든 태그의 합쳐진 margin-left, margin-right 의 크기가 같음 */
+    .jc-space-evenly {
+      justify-content: space-evenly;
+    }
+
+
+    .height-250 {
+      height: 250px;
+    }
+
+    .height-500 {
+      height: 500px;
+    }
+
+    .width-500 {
+      width: 500px;
+    }
+
+
+    /* align-items 는 부모 태그에 적용하며, 배치될 자식 태그의 세로 정렬 방식을 설정 */
+    .ai-start {
+      align-items: flex-start;
+    }
+
+    .ai-center {
+      align-items: center;
+    }
+
+    .ai-end {
+      align-items: flex-end;
+    }
+
+    .ai-stretch {
+      align-items: stretch;
+    }
+
+    .ai-baseline {
+      align-items: baseline;
+    }
+
+    /* align-self 는 자식 태그에 적용, 지정한 태그만 세로 정렬 방식을 설정 시 사용 */
+    /* align-items 를 부모 태그에 사용하여 전체 세로 정렬 방식을 지정하고, 특정 자식 태그만 align-self 를 사용하여 다른 세로 정렬 방식을 적용 */
+    .as-start {
+      align-self: flex-start;
+    }
+
+    .as-center {
+      align-self: center;
+    }
+
+    .as-end {
+      align-self: flex-end;
+    }
+
+    .as-stretch {
+      align-self: stretch;
+    }
+
+    .as-baseline {
+      align-self: baseline;
+    }
+
+
+    .ac-start {
+      align-content: flex-start;
+    }
+
+    .ac-center {
+      align-content: center;
+    }
+
+    .ac-end {
+      align-content: flex-end;
+    }
+
+    .ac-space-between {
+      align-content: space-between;
+    }
+
+    .ac-space-around {
+      align-content: space-around;
+    }
+
+    .ac-space-evenly {
+      align-content: space-evenly;
+    }
+
+    .ac-stretch {
+      align-content: stretch;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>플렉스박스 사용하기</h2>
+
+    <div>
+      <h3>플렉스박스 사용 안함</h3>
+
+      <div class="bg">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <h3>플렉스박스 사용</h3>
+
+      <div class="flexbox bg">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <h3>float 사용</h3>
+
+      <div class="clearfix bg">
+        <div class="box red float-left">1</div>
+        <div class="box green float-left">2</div>
+        <div class="box blue float-left">3</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>flex-direction</h3>
+
+      <h4>row (기본값)</h4>
+      <div class="flexbox bg flex-direction-row">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+      </div>
+      <br>
+
+      <h4>row-reverse</h4>
+      <div class="flexbox bg flex-direction-row-reverse">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+      </div>
+
+      <br>
+
+      <h4>column</h4>
+      <div class="flexbox bg flex-direction-column">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+      </div>
+
+      <br>
+
+      <h4>column-reverse</h4>
+      <div class="flexbox bg flex-direction-column-reverse">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>flex-wrap</h3>
+
+      <h4>nowrap (기본값)</h4>
+      <div class="flexbox bg flex-nowrap">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">8</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+        <div class="box red">13</div>
+        <div class="box green">14</div>
+        <div class="box blue">15</div>
+      </div>
+
+      <br>
+
+      <h4>wrap</h4>
+      <div class="flexbox bg flex-wrap">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">8</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+        <div class="box red">13</div>
+        <div class="box green">14</div>
+        <div class="box blue">15</div>
+      </div>
+
+      <br>
+
+      <h4>wrap-reverse</h4>
+      <div class="flexbox bg flex-wrap-reverse">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">8</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+        <div class="box red">13</div>
+        <div class="box green">14</div>
+        <div class="box blue">15</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>flex-flow</h3>
+
+      <h4>flex-flow 사용 안함</h4>
+      <div class="flexbox bg no-flex-flow">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">8</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+        <div class="box red">13</div>
+        <div class="box green">14</div>
+        <div class="box blue">15</div>
+      </div>
+
+      <br>
+
+      <h4>flex-flow 사용</h4>
+      <div class="flexbox bg flex-flow">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">8</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+        <div class="box red">13</div>
+        <div class="box green">14</div>
+        <div class="box blue">15</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>justify-content</h3>
+
+      <h4>flex-start (기본값)</h4>
+      <div class="flexbox bg jc-start">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>center</h4>
+      <div class="flexbox bg jc-center">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>flex-end</h4>
+      <div class="flexbox bg jc-end">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>space-between</h4>
+      <div class="flexbox bg jc-space-between">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>space-around</h4>
+      <div class="flexbox bg jc-space-around">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>space-evenly</h4>
+      <div class="flexbox bg jc-space-evenly">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>align-items</h3>
+
+      <h4>flex-start</h4>
+      <div class="flexbox bg height-250 ai-start">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>center</h4>
+      <div class="flexbox bg height-250 ai-center">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>flex-end</h4>
+      <div class="flexbox bg height-250 ai-end">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>stretch (기본값)</h4>
+      <div class="flexbox bg height-250 ai-stretch">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+      </div>
+
+      <br>
+
+      <h4>baseline</h4>
+      <div class="flexbox bg height-250 ai-baseline">
+        <div class="box red" style="font-size: 10px;">1</div>
+        <div class="box green" style="font-size: 24px;">2</div>
+        <div class="box blue" style="font-size: 16px;">3</div>
+        <div class="box red" style="font-size: 32px;">4</div>
+        <div class="box green" style="font-size: 8px;">5</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>align-self</h3>
+
+      <div class="flexbox bg height-250 ai-end">
+        <div class="box red" style="font-size: 8px;">1</div>
+        <div class="box green as-start" style="font-size: 32px;">2</div>
+        <div class="box blue as-center" style="font-size: 16px;">3</div>
+        <div class="box red" style="font-size: 48px;">4</div>
+        <div class="box green" style="font-size: 24px;">5</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>align-content</h3>
+
+      <h4>flex-start</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-start">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+
+      <br>
+
+      <h4>center</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-center">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+
+      <br>
+      <h4>flex-end</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-end">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+
+      <br>
+      <h4>space-between</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-space-between">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+
+      <br>
+      <h4>space-around</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-space-around">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+
+      <br>
+      <h4>space-evenly</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-space-evenly">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+
+      <br>
+      <h4>stretch (기본값)</h4>
+      <div class="flexbox bg height-500 width-500 flex-wrap ac-stretch">
+        <div class="box red">1</div>
+        <div class="box green">2</div>
+        <div class="box blue">3</div>
+        <div class="box red">4</div>
+        <div class="box green">5</div>
+        <div class="box blue">6</div>
+        <div class="box red">7</div>
+        <div class="box green">8</div>
+        <div class="box blue">9</div>
+        <div class="box red">10</div>
+        <div class="box green">11</div>
+        <div class="box blue">12</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>플렉스박스로 컨텐츠를 정중앙에 배치하기</h3>
+      <div class="bg width-500 height-500 flexbox jc-center ai-center">
+        <div class="box green">1</div>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div>
+      <h3>flex-grow</h3>
+
+      <!-- flex-grow : 자식 태그를 부모 태그의 크기만큼 채울 경우 사용 -->
+      <!-- 자식 태그에 지정한 flex-grow 의 총합에서 각각의 지정한 크기만큼 크기를 설정함 -->
+      <!-- flex-grow 의 크기가 모두 동일하면 각 자식 태그의 크기가 동일함 -->
+      <div class="flexbox bg">
+        <div class="box red" style="flex-grow: 1;">1</div>
+        <div class="box green" style="flex-grow: 1;">2</div>
+        <div class="box blue" style="flex-grow: 2;">3</div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

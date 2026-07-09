@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 문제 1) 모바일과 데스크톱 화면에서 알림창의 배경색과 글자 크기가 다르게 반응하도록 미디어 쿼리를 작성하세요 */
+    /* 화면 너비 768 이상일 경우 배경 색상 변경, 제목 글자 크기 변경 */
+    .alert-box {
+      background-color: #fef08a;
+      padding: 20px;
+      border: 1px solid #eab308;
+    }
+
+    .alert-box h2 {
+      font-size: 18px;
+      margin-top: 0px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .alert-box {
+        background-color: deepskyblue;
+      }
+
+      .alert-box h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="alert-box">
+    <h2>⚠️ 보안 경고</h2>
+    <p>새로운 기기에서 로그인이 감지되었습니다.</p>
+  </div>
+</body>
+
+</html>

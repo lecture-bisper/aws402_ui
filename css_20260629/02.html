@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      margin: 50px auto 0px;
+    }
+
+    .usevw {
+      font-size: 5vw;
+    }
+
+    .nousevw {
+      font-size: 73px;
+    }
+
+    .sub-container {
+      width: 960px;
+      height: 300px;
+      padding: 10px;
+      margin: 16px auto;
+      border: 1px solid black;
+    }
+
+    .sub {
+      background-color: cadetblue;
+    }
+
+    /* 미디어쿼리를 여러개 사용 시 max 나 min 중 하나를 선택해서 해당 크기만 계속 사용하는 것을 추천 */
+    /* 모바일 퍼스트 형식으로 사용할 경우 min 을 기준으로 잡는 것을 추천 */
+    @media all and (min-width: 768px) {
+      .sub-container {
+        width: 540px;
+        border: 5px dotted black;
+      }
+
+      .sub01 {
+        background-color: orange;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      .sub-container {
+        width: 720px;
+        border: 2px dashed black;
+      }
+
+      .sub01 {
+        background-color: greenyellow;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="div01">
+      <h2>뷰포트 단위</h2>
+
+      <div>
+        <h1 class="usevw">뷰포트 사이즈를 적용한 텍스트</h1>
+        <h1 class="nousevw">뷰포트 사이즈를 적용하지 않은 텍스트</h1>
+      </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div id="div02">
+      <h2>미디어 쿼리 사용하기</h2>
+
+      <div class="sub01 sub-container">
+        <h3>웹 브라우저의 크기가 변경되면 배경 색상도 변경됨</h3>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
