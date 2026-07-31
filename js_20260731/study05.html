@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+    console.log("\n----- 데이터 타입 -----\n");
+
+    console.log("\n----- Number -----");
+    let num1 = 10;
+    let num2 = 10.5;
+    console.log(num1);
+    console.log(num2);
+    num1 = -10;
+    num2 = -10.5;
+    console.log(num1);
+    console.log(num2);
+
+    console.log("\n----- string -----");
+  //   자바스크립트는 문자 타입이 없음(문자열만 있음)
+  //   '' 나 "" 를 사용하여 문자열을 표시
+  //   문자로써의 '' 는 "" 로 감싸서 표현, 문자로써의 "" 는 '' 로 감싸서 표현
+    let str1 = '문';
+    let str2 = '자';
+    console.log(str1+str2);
+
+    let str3 = "문자열";
+    let str4 = '자바스크립트에서 "큰 따옴표는" 작은 따옴표 안에서 사용';
+    let str5 = "자바스크립트에서 '작은 따옴표는는' 큰 따옴표 안에서 사용";
+    console.log(str3);
+    console.log(str4);
+    console.log(str5);
+
+    let str6 = `문자열 사용 시 \`(백틱) 을 사용해도 됨(ES6 버전에서 템플릿 문자열에서 사용)`;
+    console.log(str6);
+    console.log(`백틱을 사용하고 변수(${str1 + str2})를 문자열 안에서 사용할 수 있음`);
+
+    console.log("\n----- boolean -----");
+
+    let bValue = false;
+
+    console.log(bValue);
+    bValue = true;
+    console.log(bValue);
+
+    console.log("\n----- undefined / null -----");
+  //   undefined : 데이터 없음, 정의되지 않음, 변수 선언 후 데이터를 한번도 저장하지 않은 상태
+  //   null : 데이터 없음, 변수 선언 후 한번 이상 사용하고 해당 변수가 비어있는 상태
+  //   NaN : Not a Number 의 줄임말로 만든 데이터 타입, "100a" 처럼 숫자가 문자와 함께 있는 문자열이나 숫자가 포함되지 않은 문자열이라서 number 타입으로 변환될 수 없는 데이터, isNaN() 함수로 변환 가능한지 확인 후 변환
+
+    let value1;
+    let value2 = 100;
+    value2 = null;
+
+    console.log(value1);
+    console.log(value2);
+
+  //   https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Data_structures 사이트 참고
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
