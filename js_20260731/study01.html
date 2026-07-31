@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--    자바스크립트의 사용 방식 3가지 -->
+  <!--    1. 인라인 방식 : html 태그 안에 자바스크립트 코드를 바로 입력 -->
+<!--        실행 우선 순위가 가장 높음, 각 html 태그마다 따로 입력 -->
+<!--      2. 각 웹페이지 안에 script 태그를 사용하여 자바스크립트를 입력 -->
+<!--        2.1 head 태그 안에 script 태그를 사용하는 방식 -->
+<!--          title 태그 아래에 script 태그를 사용하여 자바스크립트 코드를 입력 -->
+<!--          자바스크립트코드를 head 태그에 모두 입력하여 유지보수가 쉽도록 하기 위해서 사용 -->
+<!--        2.2 body 태그 안에 script 태그를 사용하는 방식 -->
+<!--          body 태그의 가장 하단에 script 태그를 사용하여 자바스크립트 코드를 입력 -->
+<!--          html 태그가 모두 로딩된 후 자바스크립트가 동작하도록 하기 위해서 사용 -->
+<!--      3. 외부 자바스크립트 파일을 호출하여 사용 -->
+<!--        전체 사이트에서 공통적으로 사용되는 내용을 주로 입력하여 사용 -->
+
+  <script>
+    // 오류 발생 이유
+    // html, css, js 는 웹 브라우저가 해당 코드들을 해석할 때 위에서 아래로 한줄씩 해석을 진행
+    // js 코드가 html 태그를 검색하여 사용할 경우 head 태그 혹은 body 태그 중간에 입력되어 있을 경우 웹 브라우저의 해석기가 html 태그를 로딩하여 해석하기 전이면 js 가 해당 태그를 검색할 수 없음
+    // js 를 head 태그 및 body 태그 중간에 사용할 경우에는 js 가 제공하는 이벤트를 사용해서 html 태그가 모두 로딩된 후 js 가 동작할 수 있도록 해야 함
+    const btn01 = document.querySelector("#btn01");
+    btn01.addEventListener("click", function() {
+        alert("head 태그에 사용");
+    });
+  </script>
+
+</head>
+<body>
+<h1 id="heading">자바스크립트</h1>
+<p id="text">위 텍스트를 클릭해보세요</p>
+<br>
+<h1 id="heading2">자바스크립트</h1>
+<p id="text2">위 텍스트를 클릭해보세요</p>
+<br>
+<!--  인라인 방식 사용 -->
+<h1 onclick="alert('클릭했습니다.')">클릭 시 알림창 출력</h1>
+
+<!--  body 태그 안에 script 태그를 사용하여 자바스크립트 코드를 입력하여 사용 -->
+<script>
+    let heading = document.querySelector("#heading");
+    heading.onclick = function() {
+        heading.style.color = "red";
+    }
+</script>
+
+<!--  외부 js 파일을 생성 후 웹 페이지에서 호출하여 자바스크립트를 사용 -->
+<script src="./js/change-color.js"></script>
+
+<br><hr><br>
+
+<script>
+  const btn02 = document.querySelector("#btn02");
+  btn02.addEventListener("click", function() {
+      alert('body 태그 중간에 사용')
+  });
+</script>
+
+<button id="btn01">알림창 출력1(head 태그에 사용)</button>
+<button id="btn02">알림창 출력2(body 태그 중간에 사용)</button>
+<button id="btn03">알림창 출력3(body 태그 하단에 사용)</button>
+
+<script>
+    // const btn01 = document.querySelector("#btn01");
+    // btn01.addEventListener("click", function() {
+    //     alert("head 태그에 사용");
+    // });
+    // const btn02 = document.querySelector("#btn02");
+    // btn02.addEventListener("click", function() {
+    //     alert('body 태그 중간에 사용')
+    // });
+  const btn03 = document.querySelector("#btn03");
+  btn03.addEventListener("click", function() {
+      alert('body 태그 하단에 사용');
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

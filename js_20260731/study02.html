@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+<!--  head 태그에 script 사용 시 -->
+<!--  js 에서 제공하는 onload 이벤트 사용 -->
+<!--  현재 웹 페이지의 모든 컨텐츠가 로딩된 후 자바스크립트 코드가 동작하는 이벤트 -->
+<!--  음원 혹은 영상과 같은 대용량 미디어 컨텐츠가 있을 경우, 해당 컨텐츠까지 모두 로딩된 후 동작 -->
+  <script>
+    window.onload = function() {
+        const btn01 = document.querySelector("#btn01");
+        btn01.addEventListener("click", function() {
+            alert("버튼1 클릭했습니다.");
+        });
+    }
+  </script>
+
+<!--  js 에서 제공하는 addEventListener 이벤트 사용 -->
+<!--  현재 웹 페이지의 html 태그가 모두 로딩된 후 자바스크립트 코드가 동작하는 이벤트 -->
+<!--  웹브라우저에서 컨텐츠를 제외하고 html 태그의 내용만 모두 로딩되며 자바스크립트 코드가 동작할 수 있음 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const btn02 = document.querySelector("#btn02");
+        btn02.addEventListener("click", function() {
+            alert("버튼2 클릭했습니다.");
+        });
+    });
+  </script>
+</head>
+<body>
+  <button id="btn01">클릭 시 알림창 출력</button>
+  <button id="btn02">클릭 시 알림창 출력</button>
+  <button id="btn03">클릭 시 알림창 출력</button>
+<!--  html 태그에 inline 방식으로 입력 -->
+  <button id="btn04" onclick="alert('버튼 4번 클릭 했습니다.')">클릭 시 알림창 출력</button>
+
+<!--  body 태그의 가장 하단에 입력 -->
+<!--  자바스크립트의 이벤트 없이 body 태그 안에서 모든 html 태그가 로딩된 후 동작 -->
+  <script>
+    const btn03 = document.querySelector("#btn03");
+    btn03.addEventListener("click", function() {
+        alert('버튼 3번 클릭 했습니다.');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

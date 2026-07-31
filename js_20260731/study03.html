@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const btn01 = document.getElementById("btn01");
+          const btn02 = document.getElementById("btn02");
+          const btn03 = document.getElementById("btn03");
+          const btn04 = document.querySelector("#btn04");
+          const btn05 = document.querySelector("#btn05");
+
+          btn01.addEventListener("click", function () {
+              alert('버튼 1 클릭!!');
+          });
+
+          btn02.addEventListener("click", function () {
+              const flag = confirm("확인과 취소 중 선택하세요");
+
+              if (flag) {
+                  alert("확인을 눌렀습니다.(" + flag + ")");
+              } else {
+                  alert("취소를 눌렀습니다.(" + flag + ")");
+              }
+          });
+
+          btn03.addEventListener("click", function () {
+              let text = prompt("화면에 출력할 내용을 입력하세요");
+              alert("출력 내용 : " + text);
+          });
+
+          btn04.addEventListener("click", function () {
+              const inputText = document.querySelector("#input-text");
+              let text = inputText.value;
+
+              document.write("입력한 내용 : " + text);
+          });
+
+          btn05.addEventListener("click", function () {
+              const inputText = document.querySelector("#input-text");
+              console.log("입력한 내용 : " + inputText.value);
+          });
+      });
+  </script>
+</head>
+<body>
+<div class="container mt-5">
+  <button type="button" id="btn01" class="btn btn-primary">alert() 출력</button>
+  <button type="button" id="btn02" class="btn btn-success">confirm() 출력</button>
+  <button type="button" id="btn03" class="btn btn-info">prompt() 출력</button>
+  <br>
+  <div class="mt-3">
+    <input type="text" class="form-control" id="input-text" placeholder="내용을 입력하세요">
+  </div>
+  <div class="mt-3">
+    <button type="button" id="btn04" class="btn btn-secondary">document.write() 사용</button>
+    <button type="button" id="btn05" class="btn btn-warning">console.log() 사용</button>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
