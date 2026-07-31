@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>배열과 Object</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+
+  <script>
+//    배열 : 자바의 ArrayList 와 비슷한 데이터 타입
+//    index 가 존재하고, 데이터를 순차적으로 저장
+//    [index] 를 사용하여 배열의 요소에 접근
+//    배열이 선언된 후 배열의 크기를 변경할 수 있음
+//    자바스크립트의 배열은 각 요소에 모든 데이터 타입을 저장할 수 있음
+//    자바의 변수는 선언 시 데이터 타입을 지정하는 것이 아니라, 변수에 데이터가 저장되는 시점에 데이터 타입을 추론하여 변수의 데이터 타입이 정해짐
+//    빈 배열 선언 시 'let 배열명' 형태로 선언 시 해당 변수는 배열이 아님
+//    빈 배열은 'let 배열명 = []' 형태로 사용해야 함
+
+    // 사용법(선언)
+    // const 배열명 = [데이터1, 데이터2, 데이터3, ... ];
+    // let 배열명;
+    // 배열명 = [데이터1, 데이터2, 데이터3, ... ];
+
+    // 사용법(사용)
+    // 배열명[index];
+    // 배열명[index] = 데이터;
+
+    const arr1 = [10, 20, 30, 40, 50];
+    console.log(arr1);
+
+    let arr2;
+    console.log(typeof arr2);
+
+    let arr3 = [];
+    console.log(typeof arr3);
+
+    let arr4 = ["문자열", "저장", "가능"];
+    console.log(arr4);
+    console.log(typeof arr4);
+
+    let arr5 = [true, false];
+    console.log(arr5);
+    console.log(typeof arr5);
+
+    let arr6;
+    console.log(arr6)
+    console.log(typeof arr6);
+
+    arr6 = ["변수에", "배열을", "대입 시", "변수가", "배열이 됨"];
+    console.log(arr6);
+    console.log(typeof arr6);
+
+    let arr7 = [10, 20, 30, 40, 50];
+    console.log(arr7[0]);
+    console.log(arr7[2]);
+    console.log(arr7[4]);
+
+    arr7[1] = 200;
+    arr7[3] = 400;
+    console.log(arr7);
+
+    let arr8 = [10, 20, "삼십", "사십", true, false, [50, 60]];
+    console.log(arr8);
+    console.log(arr8[2]);
+    console.log(arr8[6]);
+
+    console.log("\n------------------- 배열 함수 ------------------\n");
+
+    // 배열 관련 함수
+  //  자바스크립트는 배열의 기능을 쉽게 사용할 수 있도록 여러가지 함수를 제공함
+
+  // length : 지정한 배열의 길이를 출력하는 속성, 읽기 전용으로 출력만 가능함
+  // 사용법
+  // 배열명.length
+
+  const arr9 = [10, 20, 30, 40, 50];
+  console.log("배열 arr9 의 길이는 " + arr9.length);
+
+  // toString() : 지정한 배열에 저장된 요소를 모두 문자열로 출력, 하나의 긴 문자열로 출력, 각각의 요소를 구분하는 기호로 ','  를 사용함
+  // 사용법
+  // let 변수명 = 배열명.toString();
+    console.log('\n ----- toString() -----');
+    const arr10 = ['사과', '복숭아', '배', '수박', '딸기'];
+    console.log("배열의 내용 모두 출력하기 : ");
+    let result = arr10[0] + ", " + arr10[1] + ", " + arr10[2] + ", " + arr10[3] + ", " + arr10[4];
+    console.log(result);
+
+    console.log("toString() 을 사용하여 내용을 모두 출력 : ");
+    result = arr10.toString();
+    console.log(result);
+
+
+  // join(문자) : toString()과 동일한 기능을 하는 함수, 매개변수로 문자를 사용 시 해당 문자를 배열의 요소를 구분하는 구분자로 사용하여 배열의 모든 요소를 문자열로 출력
+  // 사용법
+  // let 변수명 = 배열명.join("*");
+    console.log('\n ----- join() -----');
+    console.log("toString() 을 사용하여 내용을 출력 : ");
+    console.log(arr10.toString());
+
+    console.log("join() 을 사용하여 내용을 출력 : ");
+    console.log(arr10.join(" * "));
+
+
+  // push(데이터) : 지정한 배열의 끝에 데이터를 추가
+  // 사용법
+  // let 배열명 = [값1, 값2, 값3];
+  // 배열명.push(값4);
+    console.log('\n ----- push() -----');
+    const arr11 = ['사과', '배', '복숭아', '참외'];
+    console.log('원본 배열 : ');
+    console.log(arr11);
+
+    arr11.push('바나나');
+    arr11.push('파인애플');
+
+    console.log('push() 사용 후 배열 : ');
+    console.log(arr11);
+
+
+  // pop() : 지정한 배열의 마지막 데이터를 삭제
+  // 사용법
+  // 배열명.pop();
+  // 변수 = 배열명.pop();
+    console.log('\n ----- pop() -----');
+    console.log('원본 배열 : ');
+    console.log(arr11);
+
+    arr11.pop(); // 지정한 배열의 마지막 데이터를 꺼내어 삭제
+    result = arr11.pop(); // 지정한 배열의 마지막 데이터를 꺼내어 삭제 후 변수에 저장
+
+    console.log('pop() 사용 후 배열 : ');
+    console.log(arr11);
+    console.log('pop() 을 사용하여 삭제한 데이터 : ' + result);
+
+
+  // unshift() : 지정한 배열의 가장 앞에 데이터를 추가
+  // 사용법
+  // 배열명.unshift(데이터);
+    console.log('\n ----- unshift() -----');
+    console.log('원본 배열 내용 : ');
+    console.log(arr11);
+
+    arr11.unshift('망고');
+    arr11.unshift('애플망고');
+
+    console.log('unshift() 사용 후 배열 : ');
+    console.log(arr11);
+
+
+  // shift() : 지정한 배열의 가장 앞에 있는 데이터를 삭제
+  // 사용법
+  // 배열명.shift();
+  // 변수명 = 배열명.shift();
+    console.log('\n ----- shift() -----');
+    console.log('원본 배열 내용 : ');
+    console.log(arr11);
+
+    arr11.shift();
+    result = arr11.shift();
+
+    console.log('shift() 사용 후 배열 : ');
+    console.log(arr11);
+    console.log('shift() 로 삭제한 데이터 : ' + result);
+
+
+  // concat() : 두개 이상의 배열을 합쳐서 하나의 새로운 배열로 만들어주는 함수
+  // 원본 배열은 수정되지 않음
+  // 지정한 배열의 마지막 요소 뒤에 합쳐지는 다른 배열이 추가됨
+  // 사용법
+  // const 새배열명 = 배열1.concat(배열2);
+  // const 새배열명 = 배열1.concat(배열2, [데이터1, 데이터2, 데이터3, ...]);
+    console.log('\n ----- shift() -----');
+    const arr12 = ['사과', '복숭아', '포도', '배'];
+    const arr13 = ['바나나', '자몽', '파인애플', '오렌지'];
+
+    console.log('원본 배열 arr12 : ');
+    console.log(arr12);
+    console.log('원본 배열 arr13 : ');
+    console.log(arr13);
+
+    console.log('\n');
+
+    const arr14 = arr12.concat(arr13);
+    console.log('합쳐진 새 배열 arr14 : ');
+    console.log(arr14);
+
+    console.log('기존 원본 배열 arr12 : ');
+    console.log(arr12);
+    console.log('기존 원본 배열 arr13 : ');
+    console.log(arr13);
+
+    console.log('\n');
+
+    const arr15 = arr13.concat(["배", "복숭아", "포도", "딸기"], ["체리", "망고", "구아바"]);
+    console.log('새 배열 arr15 : ')
+    console.log(arr15);
+
+
+  // splice() : 배열을 원하는대로 수정할 수 있는 함수
+  // 배열의 지정한 index 에 데이터를 추가할 수 있음 (두번째 매개변수가 0 일 경우)
+  // 배열의 지정한 index 를 삭제할 수 있음 (세번째 이후의 데이터가 없을 경우)
+  // 해당 함수 사용 시 원본 배열의 내용을 수정된
+  // 사용법
+  // 배열명.splice(시작 index, 삭제 수, 데이터1, 데이터2)
+    console.log('\n ----- splice() -----');
+    const arr16 = ['사과', '복숭아', '딸기', '배', '포도', '무화과'];
+    console.log('원본 배열 arr16 : ');
+    console.log(arr16);
+
+    // splice() 로 지정한 index에 데이터 추가
+    arr16.splice(4, 0, '수박', '참외');
+    console.log('splice() 로 데이터 추가 후 arr16 : ');
+    console.log(arr16);
+
+    // splice() 지정한 index에서 지정한 수의 요소를 삭제
+    arr16.splice(2, 2);
+    console.log('splice() 로 데이터 삭제 후 arr16 : ');
+    console.log(arr16);
+
+    // splice() 로 지정한 index에서 지정훈 수의 요소를 삭제 후 지정한 데이터를 추가, 수정
+    arr16.splice(2, 2, '파인애플', '바나나');
+    console.log('splice() 로 데이터 수정 후 arr16 : ');
+    console.log(arr16);
+
+    // splice() 로 0번 index 에서 배열의 크기만큼 삭제, 빈 배열 만들기
+    arr16.splice(0, arr16.length);
+    console.log('splice() 로 빈 배열 만들기');
+    console.log(arr16);
+
+
+  // slice() : splice() 와 비슷한 기능을 하는 배열 관련 함수
+  // 지정한 배열의 특정 내용을 복사하여 새로운 배열로 만들어 출력하는 함수
+  // 원본 배열을 그대로 두고, 새로운 배열을 생성함
+  // 사용법
+  // const 새배열명 = 원본배열명.slice(시작 index);
+  // const 새배열명 = 원본배열명.slice(시작 Index, 끝 index); // 끝 index -1까지 복사
+    console.log('\n ----- slice() -----');
+    const arr17 = ['사과', '복숭아', '딸기', '배', '포도', '무화과'];
+    console.log('원본 배열 arr17 :');
+    console.log(arr17);
+
+    // slice() 로 지정한 index 부터 마지막 요소까지 배열 복사
+    const arr17_1 = arr17.slice(3);
+    console.log('복사한 배열 arr17_1 :');
+    console.log(arr17_1);
+
+    console.log('원본 배열 arr17 :');
+    console.log(arr17);
+
+    // slice() 로 지정한 시작 index 부터 지정한 끝 index -1 의 요소까지 배열 복사
+    const arr17_2 = arr17.slice(2, 5);
+    console.log('지정한 범위를 복사한 배열 arr17_2 : ');
+    console.log(arr17_2);
+
+    console.log('원본 배열 arr17 :');
+    console.log(arr17);
+
+
+  // indexOf(), lastIndexOf() : 지정한 데이터가 배열에 있는지 여부를 확인하고, 해당 데이터가 있을 경우 데이터의 위치를 알려주는 배열 관련 함수
+  // 데이터가 있을 경우 해당 index 번호를 출력, 데이터가 없을 경우 -1 을 출력
+  // 동일한 데이터가 여러개 있을 경우 첫번째로 검색되는 데이터의 위치를 출력
+  // indexOf() 는 배열의 앞에서부터 검사하여 위치를 출력
+  // lastIndexOf() 는 배열의 뒤에서부터 검사하여 위치를 출력
+  // 사용법
+  // let 변수 = 배열명.indexOf(데이터);
+  // let 변수 = 배열명.lastIndexOf(데이터);
+    console.log('\n ----- indexOf()/lastIndexOf() -----');
+    const arr18 = ['사과', '복숭아', '딸기', '배', '포도', '딸기', '무화과'];
+    console.log('원본 배열 arr18 :');
+    console.log(arr18);
+
+    let keyInput = prompt('검색할 과일 명을 입력하세요');
+    let position = arr18.indexOf(keyInput);
+
+    if (position != -1) {
+        console.log('indexOf() 사용 ' + keyInput + '이 있는 index : ' + position + ', 과일명 : ' + arr18[position]);
+    }
+    else {
+        console.log(keyInput + '은 배열에 없습니다.');
+    }
+
+    position = arr18.lastIndexOf(keyInput);
+
+    if (position != -1) {
+        console.log('lastIndexOf() 사용 ' + keyInput + '이 있는 index : ' + position + ', 과일명 : ' + arr18[position]);
+    }
+    else {
+        console.log(keyInput + '은 배열에 없습니다.');
+    }
+
+
+  // sort() : 배열의 요소를 순서대로 오름 차순 정렬하는 배열 관련 하수
+  // sort() 사용 시 문자도 비교하여 오름 차순 정렬을 진행
+  // sort() 로 숫자를 정렬 시 1, 2, 3, 4, 5 같은 숫자는 정상적으로 정렬되지만, 1, 2, 3, 10, 20, 4, 5 형태로 되어있는 숫자일 경우 잘못된 결과가 출력될 수 있음
+  // 사용법
+  // 배열명.sort();
+
+  // reverse() : 배열의 요소 순서를 반대로 뒤집는 배열 관련 함수
+  // reverse() 는 배열의 현재 요소 순서를 반대로 뒤집어 줌(내림차순 정렬로 진행하는 것이 아님)
+  // 사용법
+  // 배열명.reverse()
+    console.log('\n ----- sort()/reverse() -----');
+    const arr19 = [3, 7, 1, 4, 8, 6, 9, 2, 5, 0];
+    console.log('원본 배열 arr19 :');
+    console.log(arr19);
+
+    arr19.sort();
+    console.log('sort() 사용 후 arr19 :');
+    console.log(arr19);
+
+    arr19.reverse();
+    console.log('reverse() 사용 후 arr19 :');
+    console.log(arr19);
+
+    const arr20 = [3, 7, 1, 4, 8, 6, 9, 2, 5, 0];
+    console.log('원본 배열 arr20 :');
+    console.log(arr20);
+
+    arr20.reverse();
+    console.log('sort() 없이 reverse() 만 사용 후 arr20 :');
+    console.log(arr20);
+
+
+  //   그냥 sort() 사용 시 정상적으로 오름 차순 정렬이 되지 않음
+  // function(a, b) { return a - b; } 를 매개변수로 추가하여야 정상적으로 숫자가 정렬 됨
+    const arr21 = [2, 10, 3, 1, 4, 5, 30, 6, 8, 7];
+    console.log('원본 배열 arr21 :');
+    console.log(arr21);
+
+    arr21.sort();
+    console.log('그냥 sort() 사용 후 arr21 :');
+    console.log(arr21);
+
+    arr21.sort(function(a, b) {
+        return a - b;
+    });
+    console.log('변경된 sort() 사용 후 arr21 :');
+    console.log(arr21);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
