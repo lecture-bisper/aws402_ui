@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+
+  <script>
+    //  이벤트 : 웹 브라우저에서 발생되는 각종 이벤트 동작을 사용자가 제어하는 것
+  //   주로 마우스 이벤트, 키보드 이벤트, form 이벤트가 사용됨
+
+  //   이벤트 등록 방법
+  //   1. html 태그에서 직접 등록
+  //        각 html 태그에 'on이벤트' 속성을 사용하여 자바스크립트 코드를 입력하는 방식
+  //        현재는 잘 사용하지 않음, 특정 부분만 수정 시 사용
+  //        css 선택자가 필요없음
+  //   2. 자바스크립트에서 html 태그를 검색 후 'on이벤트' 속성 사용하기
+  //        querySelector(), getElementById() 함수를 사용하여 특정 html 태그를 검색 후 해당 태그에 'on이벤트' 속성에 자바스크립트 코드를 입력하여 사용
+  //        css 선택자가 필요함 (주로 ID 선택자를 사용)
+  //        현재는 잘 사용하지 않음
+  //   3. addEventListener 함수 사용하기
+  //        현재 권장되는 방식
+  //        querySelector(), getElementById() 함수를 사용하여 특정 html 태그를 검색 후 해당 태그에 addEventListener(), removeEventListener() 을 사용하여 이벤트를 등록하거나 등록된 이벤트를 삭제함
+  //        css 선택자가 필요함 (주로 ID 선택자를 사용)
+
+    function clickEvent1() {
+        alert('html 태그에서 미리 선언한 함수 호출!!');
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        const btn02 = document.getElementById('btn-02')
+        btn02.onclick = function() {
+            alert('html 태그 검색 후 "on이벤트" 속성에 자바스크립트 코드 입력!!');
+        }
+
+        const btn03 = document.querySelector('#btn-03');
+        btn03.addEventListener('click', function () {
+            alert('html 태그 검색 후 이벤트 리스너에 자바스크립트 코드 등록!!');
+        });
+
+        function btn05ClickEvent() {
+            alert('클릭 이벤트!!');
+        }
+
+        const btn05 = document.querySelector('#btn-05');
+
+        const btn04 = document.querySelector('#btn-04');
+        btn04.addEventListener('click', function () {
+            btn05.addEventListener('click', btn05ClickEvent);
+
+            alert('이벤트 등록 완료!!');
+        });
+
+        const btn06 = document.querySelector('#btn-06');
+        btn06.addEventListener('click', function() {
+            btn05.removeEventListener('click', btn05ClickEvent);
+
+            alert('이벤트 삭제 완료!!');
+        });
+    });
+
+  </script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">이벤트 사용하기</h2>
+
+    <div>
+<!--      자바스크립트 코드를 html 태그의 이벤트 속성에 직접 입력 -->
+      <button type="button" class="btn btn-primary" onclick="alert('직접 이벤트 등록');">html 태그에서 직접 이벤트 등록 1</button>
+<!--      미리 선언한 자바스크립트 함수를 html 태그의 이벤트 속성에 직접 입력-->
+      <button type="button" class="btn btn-primary" onclick="clickEvent1();">html 태그에서 직접 이벤트 등록 2</button>
+      <button type="button" class="btn btn-success" id="btn-02">html 태그 검색 후 on이벤트 속성 사용</button>
+      <button type="button" class="btn btn-info" id="btn-03">html 태그 검색 후 이벤트 리스너 사용</button>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div>
+      <button type="button" class="btn btn-success" id="btn-04">이벤트 등록</button>
+      <button type="button" class="btn btn-primary mx-4" id="btn-05">클릭 시 알림창 출력</button>
+      <button type="button" class="btn btn-warning" id="btn-06">이벤트 삭제</button>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
