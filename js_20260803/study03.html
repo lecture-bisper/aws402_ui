@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>제어문</title>
+
+  <script>
+    // 제어문 : 조건식의 결과에 따라 프로그램의 흐름을 제어할 수 있는 명령어
+  //   자바스크립트에서는 제어문으로 if, switch ~ case, 삼항연산자를 제공함
+  //   사용방법이 자바와 동일함
+
+  //   단순 if : 조건식의 결과가 true 이면 추가로 코드 블럭의 내용을 실행
+
+  //   if ~ else : 조건식의 결과가 true 이면 조건식 바로 아래의 코드 블럭을 실행하고, 결과가 false 이면 else 문 아래의 코드 블럭을 실행
+
+  //   else if : 조건식이 여러개 존재하여 해당 조건식의 결과가 true 이면 해당 조건식 아래의 코드 블럭을 실행하고, 조건식의 결과가 false 이면, 다음 조건식으로 넘어가서 다시 조건을 확인
+
+    let money = prompt('소지하고 있는 금액을 입력하세요 : ');
+    money = Number(money);
+
+    console.log('카페에 갑니다.');
+    console.log('커피를 주문합니다.');
+
+    if (money > 9000) {
+        console.log('조각 케익을 주문합니다.');
+    }
+
+    console.log('주문한 음식을 맛있게 먹습니다.');
+
+    score = prompt('점수를 입력하세요 : ');
+    score = Number(score);
+    grade = 'F';
+
+    if (score >= 90) {
+        grade = 'A';
+    }
+    else if (score >= 80) {
+        grade = 'B';
+    }
+    else if (score >= 70) {
+        grade = 'C';
+    }
+    else if (score >= 60) {
+        grade = 'D';
+    }
+    else {
+        grade = 'F';
+    }
+
+    console.log('당신의 점수는 ' + score + '점이고, 등급은 ' + grade + '입니다.');
+
+    console.log("\n---------- switch ~ case ----------\n");
+
+  //   switch ~ case : 자바의 switch ~ case 문과 동일함
+  //   case 에서 break 를 생략 시 break 를 만날때 계속 실행
+  //   if 문은 조건식을 범위 형태로 사용하고, switch ~ case 조건식의 값이 지정된 형태가 있을 경우 사용
+
+    const session = prompt('관심 세션을 선택해주세요 (1-마케팅, 2-개발, 3-디자인');
+
+    switch (session) {
+        case '1':
+            console.log('마케팅 세션은 201호 에서...');
+            break;
+
+        case '2':
+            console.log('개발 세션은 203호 에서...');
+            break;
+
+        case '3':
+            console.log('디자인 세션은 205호 에서...');
+            break;
+
+        default:
+            alert('잘못 입력하셨습니다.');
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
