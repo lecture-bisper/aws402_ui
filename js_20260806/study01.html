@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+
+  <style>
+    .box {
+        width: 300px;
+        height: 300px;
+    }
+  </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const btn01 = document.querySelector('#btn01');
+      btn01.addEventListener('click', function() {
+          alert('클릭 이벤트 발생!!');
+      });
+
+      const btn02 = document.querySelector('#btn02');
+      btn02.addEventListener('dblclick', function() {
+          alert('더블 클릭 이벤트 발생!!');
+      });
+
+      const btn03 = document.querySelector('#btn03');
+      btn03.addEventListener('contextmenu', function() {
+          alert('마우스 오른쪽 버튼 클릭 이벤트 발생!!');
+      });
+
+      const btn04 = document.querySelector('#btn04');
+      btn04.addEventListener('mousedown', function() {
+          alert('마우스 버튼 다운 이벤트 발생!!');
+      });
+
+      const btn05 = document.querySelector('#btn05');
+      btn05.addEventListener('mouseup', function() {
+          alert('마우스 버튼 업 이벤트 발생!!');
+      });
+
+      const subDiv01 = document.querySelector('#sub-div01');
+      subDiv01.addEventListener('mouseover', function() {
+          console.log('마우스 오버 이벤트 발생!!');
+      });
+
+      subDiv01.addEventListener('mouseout', function() {
+          console.log('마우스 아웃 이벤트 발생!!')
+      });
+
+      subDiv01.addEventListener('mousemove', function(event) {
+          const screenX = event.screenX;
+          const screenY = event.screenY;
+          const clientX = event.clientX;
+          const clientY = event.clientY;
+          const offsetX = event.offsetX;
+          const offsetY = event.offsetY;
+
+          console.log('------------------------------------------------');
+          console.log('screenX : ' + screenX + ', screenY : ' + screenY);
+          console.log('clientX : ' + clientX + ', clientY : ' + clientY);
+          console.log('offsetX : ' + offsetX + ', offsetY : ' + offsetY);
+      });
+
+      const key1 = document.querySelector('#key-event1');
+      key1.addEventListener('keydown', function() {
+        console.log('키 다운 이벤트 동작!!');
+      });
+
+      const key2 = document.querySelector('#key-event2');
+      key2.addEventListener('keyup', function() {
+        alert('키 업 이벤트 동작!!');
+      });
+
+      const key3 = document.querySelector('#key-event3');
+      key3.addEventListener('keypress', function() {
+        console.log('키 프레스 이벤트 동작!!');
+      });
+    });
+  </script>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center">여러가지 이벤트 사용하기</h1>
+
+  <h3>마우스 이벤트</h3>
+  <div>
+    <button type="button" class="btn btn-primary" id="btn01">클릭 이벤트</button>
+    <button type="button" class="btn btn-outline-primary" id="btn02">더블 클릭 이벤트</button>
+    <button type="button" class="btn btn-success" id="btn03">오른쪽 버튼 이벤트</button>
+    <button type="button" class="btn btn-outline-success" id="btn04">마우스 버튼 다운 이벤트</button>
+    <button type="button" class="btn btn-info" id="btn05">마우스 버튼 업 이벤트</button>
+    <br><br>
+
+    <div class="box bg-primary-subtle border border-2" id="sub-div01"></div>
+
+  </div>
+
+  <br><hr><br>
+
+  <h3>키보드 이벤트</h3>
+  <div>
+    <div>
+      <label for="key-event1">key down 이벤트</label>
+      <input type="text" class="form-control" id="key-event1">
+    </div>
+    <div class="mt-3">
+      <label for="key-event2">key up 이벤트</label>
+      <input type="text" class="form-control" id="key-event2">
+    </div>
+    <div class="mt-3">
+      <label for="key-event3">key press 이벤트</label>
+      <input type="text" class="form-control" id="key-event3">
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
