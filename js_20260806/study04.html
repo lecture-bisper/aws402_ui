@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM 사용하기</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+
+  <style>
+    .box {
+        width: 150px;
+        height: 150px;
+    }
+  </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function(){
+      const btn01 = document.querySelector('#btn01');
+      btn01.addEventListener('click', function(){
+          const detail = document.querySelector("#detail > ul");
+
+          let text = '';
+          //  태그의 텍스트 영역의 텍스트를 가져옴, 화면에 보이는 것만 가져옴
+          // text = detail.innerText + '\n';
+          // 지정한 태그의 모든 자손까지 html 형태로 다 가져옴
+          // text += detail.innerHTML + '\n';
+          // 지정한 태그의 자손까지 텍스트로만 가져옴
+          text += detail.textContent;
+
+          alert(text);
+          console.log(text);
+      });
+
+      const cup = document.querySelector('#cup');
+      cup.addEventListener('click', function(){
+          const heading = document.querySelector('#heading');
+          heading.innerText="추천! 오늘의 커피";
+
+          let imgName = cup.getAttribute('src');
+          alert('이미지 파일 경로 : ' + imgName);
+
+          imgName = 'images/coffee-blue.jpg';
+          cup.setAttribute('src', imgName);
+
+          // cup.src = 'images/coffee-blue.jpg';
+      });
+
+      // 미리 선언한 이벤트용 함수
+      function clickEvent() {
+          alert('미리 선언한 함수를 콜백함수로 사용한 버튼 클릭!!');
+      }
+
+      const btn02 = document.querySelector('#btn02');
+      // 이벤트 리스너의 콜백함수로 익명함수를 직접 등록하여 이벤트 사용
+      btn02.addEventListener('click', function(){
+          alert('직접 선언한 콜백함수로 버튼 클릭!!');
+      });
+
+      // 이벤트 리스너의 콜백함수로 미리 선언해 둔 함수의 이름을 등록하여 이벤트 사용
+      const btn03 = document.querySelector('#btn03');
+      btn03.addEventListener('click', clickEvent);
+
+      // btn03의 이벤트 리스너에 등록한 함수와 동일한 함수를 사용
+      const btn04 = document.querySelector('#btn04');
+      btn04.addEventListener('click', clickEvent);
+
+
+      const cup01 = document.querySelector('#cup01');
+      cup01.addEventListener('click', function() {
+          console.log('이벤트가 발생한 대상의 src 속성 : ' + cup01.getAttribute('src'));
+          // 이벤트 발생 시 this 를 사용하면 해당 이벤트가 발생한 태그를 의미
+          alert('이벤트 대상의 src 속성 : ' + this.getAttribute('src'));
+      });
+
+      const input = document.querySelector('#input');
+      // 이벤트 리스너에 콜백함수 등록 시 매개변수로 event 객체를 넘기면 해당 이벤트가 동작한 태그의 정보를 사용할 수 있음
+      input.addEventListener('keydown', function(e){
+          // 해당 이벤트를 정지 시키는 함수
+          // e.preventDefault();
+
+          // key : 자바스크립트에서 제공하는 키의 값이나 기능을 나타냄
+          // code : 키의 물리적 위치를 나타내는 코드
+          if (e.key == '0') {
+              alert('숫자 0 을 눌렀습니다.');
+          }
+          else if (e.key == 'Enter') {
+              alert('엔터키를 눌렀습니다.');
+          }
+          else if (e.key == 'Tab') {
+              alert('Tab 키를 눌렀습니다.');
+          }
+
+          // target : 이벤트를 발생시킨 html 태그를 반환
+          console.log(e.target);
+      });
+
+      const rect = document.querySelector('#rect');
+      rect.addEventListener('mouseover', function(){
+          // style 속성을 사용하여 css 속성을 실시간으로 변경할 수 있음
+          rect.style.backgroundColor = 'green';
+          this.style.borderRadius = '50%';
+      });
+
+      rect.addEventListener('mouseout', function(){
+          rect.style.backgroundColor = 'white';
+          this.style.borderRadius = '0';
+      });
+    });
+  </script>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="my-3">
+    <button type="button" class="btn btn-primary" id="btn01">텍스트 가져오기</button>
+  </div>
+  <div id="detail">
+    <ul class="list-group">
+      <li class="list-group-item">원산지 : 에디오피아</li>
+      <li class="list-group-item" style="display: none">지역 : 이르가체프 코체레</li>
+      <li class="list-group-item" style="display: none">농장 : 게뎁</li>
+    </ul>
+  </div>
+
+  <br><hr><br>
+
+  <div>
+    <h1 id="heading">에디오피아 게뎁</h1>
+    <img src="images/coffee-pink.jpg" alt="커피잔" id="cup" width="200" height="200">
+  </div>
+
+  <br><hr><br>
+
+  <div>
+    <button type="button" class="btn btn-primary" id="btn02">함수 직접 등록</button>
+    <button type="button" class="btn btn-success" id="btn03">미리 정의한 함수 등록</button>
+    <button type="button" class="btn btn-info" id="btn04">미리 정의한 함수 등록</button>
+  </div>
+
+  <br><hr><br>
+  
+  <div>
+    <img src="images/cup-1.png" alt="" id="cup01">
+
+    <div>
+      <input type="text" class="form-control" id="input">
+    </div>
+  </div>
+
+  <br><hr><br>
+
+  <div>
+    <p>도형 위로 마우스 포인터를 올려놓으세요</p>
+    <div class="box border border-dark" id="rect"></div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
