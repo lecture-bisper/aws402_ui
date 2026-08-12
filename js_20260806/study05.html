@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+
+  <style>
+    .box {
+        width: 150px;
+        height: 150px;
+    }
+  </style>
+
+  <script>
+    let num = 0;
+    window.addEventListener("DOMContentLoaded", function() {
+      const btn01 = document.querySelector('#btn01');
+      btn01.addEventListener('click', function(){
+          num++;
+          // createElement() : 지정한 html 태그를 메모리상에 추가
+          const newTagP = document.createElement('p');
+          newTagP.textContent = '새로 추가된 p 태그';
+          newTagP.setAttribute('id', 'p0' + num);
+
+          const div02 = document.querySelector('#div02');
+          // appendChild() : createElement() 로 메모리 상에 추가한 태그를 지정한 태그의 자식 태그로 추가
+          div02.appendChild(newTagP);
+      });
+
+      const btn02 = document.querySelector('#btn02');
+      btn02.addEventListener('click', function() {
+
+          const div02 = document.querySelector('#div02');
+          const removeTagP = document.querySelector('#p0' + num);
+
+          console.log(removeTagP);
+
+          // removeChild() : 지정한 태그의 자식 태그를 삭제
+          div02.removeChild(removeTagP);
+          num--;
+      });
+
+
+    // classList : javascript 로 html 태그 검색 시 classList 속성을 가져올 수 있음
+    // 검색된 태그에 적용된 class 의 목록을 보여줌
+
+    // add(클래스명) : 지정한 클래스를 classList 에 추가
+    // remove(클래스명) : 지정한 클래스를 classList 에서 삭제
+    // contains(클래스명) : 지정한 클래스가 classList 에 있는지 확인
+    // toggle(클래스명) : 지정한 클래스가 classList 에 있으면 삭제하고, 없으면 추가함
+    //     사용법 :
+    //     html태그명.classList.add(지정한 클래스명);
+    //     html태그명.classList.remove(지정한 클래스명);
+      const btn03 = document.querySelector('#btn03');
+      btn03.addEventListener('click', function() {
+        const classInOut = document.querySelector("#class-inout");
+        const classList = classInOut.classList;
+        alert(classList);
+      });
+
+      const btn04 = document.querySelector('#btn04');
+      btn04.addEventListener('click', function() {
+        const input = document.querySelector('#class-input');
+        const inout = document.querySelector("#class-inout");
+
+        inout.classList.add(input.value);
+        input.value = '';
+      });
+
+      const btn05 = document.querySelector('#btn05');
+      btn05.addEventListener('click', function() {
+          const input = document.querySelector('#class-input');
+          const inout = document.querySelector("#class-inout");
+
+          inout.classList.remove(input.value);
+          input.value = '';
+      });
+
+      const btn06 = document.querySelector('#btn06');
+      btn06.addEventListener('click', function() {
+          const input = document.querySelector('#class-input');
+          const inout = document.querySelector("#class-inout");
+
+          inout.classList.toggle(input.value);
+      });
+
+      const btn07 = document.querySelector('#btn07');
+      btn07.addEventListener('click', function() {
+          const input = document.querySelector('#class-input');
+          const inout = document.querySelector("#class-inout");
+
+          const check = inout.classList.contains(input.value);
+          alert(check);
+          input.value = '';
+      });
+    });
+  </script>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center">html 태그 생성하기</h1>
+
+  <div id="div01">
+    <button type="button" class="btn btn-primary" id="btn01">태그 생성하기</button>
+    <button type="button" class="btn btn-primary" id="btn02">태그 삭제하기</button>
+  </div>
+
+  <br><hr><br>
+
+  <div id="div02">
+
+  </div>
+
+  <br><hr><br>
+
+  <h3>class 추가/삭제</h3>
+
+  <div id="div03">
+    <button type="button" class="btn btn-primary" id="btn03">classList 확인</button>
+    <button type="button" class="btn btn-success" id="btn04">class 추가</button>
+    <button type="button" class="btn btn-warning" id="btn05">class 삭제</button>
+    <button type="button" class="btn btn-info" id="btn06">class toggle</button>
+    <button type="button" class="btn btn-secondary" id="btn07">class 검색</button>
+    <div class="mt-3">
+      <input type="text" class="form-control" id="class-input" placeholder="클래스명을 입력하세요">
+    </div>
+
+    <hr>
+
+    <div id="class-inout" class="box border border-3 border-primary rounded-3 bg-warning-subtle"></div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

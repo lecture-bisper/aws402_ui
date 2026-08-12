@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.js"></script>
+
+  <script>
+//     문제1) 교재 605 페이지를 참고하여 지정한 날짜 입력하고, 버튼 클릭 시 해당 날짜(과거의 날짜)부터 현재까지 몇일이 지났는지 확인하는 프로그램을 작성하세요
+//     문제2) 날짜를 입력하고, 버튼 클릭 시 해당 날짜(미래의 날짜)까지 몇일이 남았는지 출력하는 프로그램을 작성하세요
+    window.addEventListener('DOMContentLoaded', function () {
+
+        let now;
+        let quiz1Date;
+        let quiz2Date;
+
+        const btn01 = document.querySelector('#btn01');
+        btn01.addEventListener('click', function () {
+            let date = document.querySelector('#input-date1').value;
+
+            // 현재 시간 가져오기
+            now = new Date();
+            // 사용자가 지정한 시간을 Date 객체로 생성하기
+            quiz1Date = new Date(date);
+
+            // 현재 시간을 기준으로 밀리초로 계산
+            const toNow = now.getTime();
+            // 지정한 날짜를 기준으로 밀리초로 계산
+            const toQuiz1Date = quiz1Date.getTime();
+
+            // 현재 시간에서 과거 날짜를 빼면 지나간 날짜가 출력
+            let passedTime = toNow - toQuiz1Date;
+
+            // 일수로 계산하기 위해서 지나간 날짜(밀리초) / 하루 24시간 (밀리초) 로 나누어줌
+            // 자바스크립트의 수학관련 객체 Math에서 제공하는 round() 함수를 사용하여 소수점 자리 생략
+            passedTime = Math.round(passedTime / (1000 * 60 * 60 * 24));
+
+            alert(quiz1Date + "부터 " + passedTime + "일 지났습니다.");
+        });
+
+        const btn02 = document.querySelector('#btn02');
+        btn02.addEventListener('click', function () {
+            const date = document.querySelector('#input-date2').value;
+
+            now = new Date();
+            quiz2Date = new Date(date);
+
+            const toNow = now.getTime();
+            const toQuiz2Date = quiz2Date.getTime();
+            let passedTime = toQuiz2Date - toNow;
+
+            passedTime = Math.round(passedTime / (1000 * 60 * 60 * 24));
+
+            alert('D-Day : ' + passedTime);
+        });
+
+        const btn03 = document.querySelector('#btn03');
+        btn03.addEventListener('click', function () {
+            // random() : 0.0 ~ 0.9까지의 임의의 숫자를 출력하는 함수
+            // floor() : 소수점 아래의 숫자를 버리는 함수
+            let rnd = Math.floor(Math.random() * 6) + 1;
+
+            alert('주사위 숫자 : ' + rnd);
+        });
+
+    //     문제 3) Math.random() 을 활용하여 로또 번호 생성 프로그램을 작성하세요
+    //     random() 으로 생성된 숫자를 배열에 저장한 후 마지막에 모두 출력
+    //     배열에 저장된 숫자가 중복되면 안됨
+
+        const btn04 = document.querySelector('#btn04');
+        btn04.addEventListener('click', function () {
+            // 빈 배열 선언
+            const lotto = [];
+
+            // 1 17 19 21 32 44
+            // 로또 번호가 6개이니 총 6번 반복
+            for (let i = 0; i < 6; i++) {
+                // 난수 발생 및 소수점 아래의 숫자 버리기(정수만 출력)
+                const rnd = Math.floor(Math.random() * 45) + 1;
+
+                // indexOf() 를 사용하여 기존 배열에 저장된 데이터 중 발생한 난수와 동일한 값이 있는지 확인, 동일한 값이 없으면 push() 사용
+                if (lotto.indexOf(rnd) == -1) {
+                    lotto.push(rnd);
+                }
+                else {
+                    // 동일한 값이 있으면 한번 더 반복해야 하므로 i 값을 1 감소
+                    i--;
+                }
+            }
+
+            lotto.sort(function(a,b) {
+                return a - b;
+            });
+
+            console.log(lotto);
+        });
+    });
+  </script>
+</head>
+<body>
+
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h3>문제 1</h3>
+
+      <div>
+        <div class="mt-3">
+          <label for="input-date1" class="form-label">날짜 입력 : </label>
+          <input type="text" class="form-control" id="input-date1">
+        </div>
+        <div class="mt-3 d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" id="btn01">날짜 계산</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><hr><br>
+
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h3>문제 2</h3>
+
+      <div>
+        <div class="mt-3">
+          <label for="input-date2" class="form-label">날짜 입력 : </label>
+          <input type="text" class="form-control" id="input-date2">
+        </div>
+        <div class="mt-3 d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" id="btn02">날짜 계산</button>
+        </div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <button type="button" class="btn btn-primary" id="btn03">주사위 번호 출력</button>
+        <button type="button" class="btn btn-success" id="btn04">로또 번호 생성</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
